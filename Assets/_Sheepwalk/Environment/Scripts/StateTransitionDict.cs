@@ -27,6 +27,12 @@ namespace  sheepwalk
         // Start is called before the first frame update
         void Start()
         {
+            InitializeTransitionGraph();
+        }
+
+        private void InitializeTransitionGraph()
+        {
+            if (transitiongraph != null) return;
             transitiongraph = new Dictionary<int, List<NodeTransition>>();
             
             foreach (var node in stateTransitionList)
@@ -46,6 +52,7 @@ namespace  sheepwalk
 
         public Dictionary<int, List<NodeTransition>> GetTransitionGraph()
         {
+            InitializeTransitionGraph();
             return transitiongraph;
         }
     }    

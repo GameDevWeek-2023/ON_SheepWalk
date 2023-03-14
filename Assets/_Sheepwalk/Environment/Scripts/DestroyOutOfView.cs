@@ -5,18 +5,23 @@ using UnityEngine;
 
 public class DestroyOutOfView : MonoBehaviour
 {
-    private bool shouldDestroy = false;
-    private void OnBecameInvisible()
-    {
-        shouldDestroy = true;
-    }
+    private Vector3 _rightEdgePoint;
+    private Camera _camera;
+    private float _threshold;
 
-    private IEnumerator WaitForDestroy()
+    public void Initialize(Vector3 point, Camera cam, float threshold)
     {
-        yield return new WaitForSeconds(3);
-        if (shouldDestroy)
+        _rightEdgePoint = point;
+        _camera = cam;
+        _threshold = threshold;
+    }
+    
+    // may still be too costly?
+    void Update()
+    {
+        if (sheepwalk.SpawnManager.CheckPointFarLeft(_camera.WorldToViewportPoint(_rightEdgePoint), _threshold))
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
