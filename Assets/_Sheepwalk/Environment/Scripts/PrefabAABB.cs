@@ -9,7 +9,7 @@ public class PrefabAABB : MonoBehaviour
     /// local space Axis Aligned Bounding Box
     /// </summary>
     public Bounds bounds;
-    Transform _transform;
+    private Transform _transform;
  
     void OnDrawGizmos()
     {
@@ -42,24 +42,30 @@ public class PrefabAABB : MonoBehaviour
     [ContextMenu("Recalculate Bounds")]
     public void RecalculateBounds ()
     {
-        MeshFilter this_mf = GetComponent<MeshFilter>();
-        if (this_mf == null)
+        var thisMeshRenderer = GetComponent<MeshRenderer>();
+        if (thisMeshRenderer == null)
         {
-            bounds = new Bounds(Vector3.zero, Vector3.zero);
+            bounds = new Bounds(transform.position, Vector3.zero);
         }
         else
         {
-            bounds = this_mf.sharedMesh.bounds;
+            bounds = thisMeshRenderer.bounds;
         }
- 
-        MeshFilter[] mfs = GetComponentsInChildren<MeshFilter>();
-        foreach (MeshFilter mf in mfs)
+        var meshRenderers = GetComponentsInChildren<MeshRenderer>();
+        foreach (var mr in meshRenderers)
         {
-            Vector3 pos = mf.transform.localPosition;
-            Bounds child_bounds = mf.sharedMesh.bounds;
-            child_bounds.center += pos;
-            bounds.Encapsulate(child_bounds);
+            //var pos = mf.transform.localPosition;
+            Bounds childBounds = mr.bounds;
+            //childBounds.center += pos;
+            /*if (gameObject.name == "Small Gap - Glossy Green")
+            {
+                Debug.Log(mr.bounds.center);
+                Debug.Log(mr.bounds.size);
+            }*/
+            bounds.Encapsulate(childBounds);
         }
+
+        bounds.center -= transform.position;
     }
  
 #if UNITY_EDITOR
