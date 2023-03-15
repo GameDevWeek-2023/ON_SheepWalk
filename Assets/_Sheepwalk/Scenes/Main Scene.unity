@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18374306, g: 0.22913486, b: 0.30461875, a: 1}
+  m_IndirectSpecularColor: {r: 0.1837436, g: 0.22913556, b: 0.3046199, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -345,6 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -429,6 +430,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 32.328, y: -22.355, z: 11.455}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &910810234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,6 +465,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 1405615470599439188, guid: 5bf6c3feb3c0cda46bc7176ee3f26713, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f69e142ab744f6488017fc48059153f, type: 2}
     - target: {fileID: 1405615470599439190, guid: 5bf6c3feb3c0cda46bc7176ee3f26713, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -896,7 +921,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5f69e142ab744f6488017fc48059153f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1049,6 +1074,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7852850924851257722, guid: 5dbdea714b8e4284a988fd3a3fe5cd34, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f69e142ab744f6488017fc48059153f, type: 2}
+    - target: {fileID: 7852850924901371008, guid: 5dbdea714b8e4284a988fd3a3fe5cd34, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f69e142ab744f6488017fc48059153f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dbdea714b8e4284a988fd3a3fe5cd34, type: 3}
 --- !u!4 &221498502355548945 stripped
@@ -1322,10 +1355,26 @@ PrefabInstance:
       propertyPath: bounds.m_Extent.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3084848906637992600, guid: 90f52d0ce084f0b4bb6b5f8b933780d5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f69e142ab744f6488017fc48059153f, type: 2}
+    - target: {fileID: 3084848907648007799, guid: 90f52d0ce084f0b4bb6b5f8b933780d5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f69e142ab744f6488017fc48059153f, type: 2}
+    - target: {fileID: 3084848907874807073, guid: 90f52d0ce084f0b4bb6b5f8b933780d5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f69e142ab744f6488017fc48059153f, type: 2}
     - target: {fileID: 3694317119429100845, guid: 90f52d0ce084f0b4bb6b5f8b933780d5, type: 3}
       propertyPath: m_Name
       value: Long Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 4129284561471241968, guid: 90f52d0ce084f0b4bb6b5f8b933780d5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f69e142ab744f6488017fc48059153f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90f52d0ce084f0b4bb6b5f8b933780d5, type: 3}
 --- !u!4 &8447354829156501499 stripped
