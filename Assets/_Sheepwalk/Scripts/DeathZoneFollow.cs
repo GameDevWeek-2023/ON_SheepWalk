@@ -10,8 +10,7 @@ public class DeathZoneFollow : MonoBehaviour
     [SerializeField] private float _followDelay = 2f;
     [SerializeField] private Camera _camera;
     private bool _running = true;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         StartCoroutine(nameof(FollowAfterDelay));
