@@ -215,7 +215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &800423330
 PrefabInstance:
@@ -226,7 +226,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1303058634785642571, guid: 284bb23ee9fbe0349824288549d1bb42, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1303058634785642571, guid: 284bb23ee9fbe0349824288549d1bb42, type: 3}
       propertyPath: m_LocalPosition.x
@@ -367,7 +367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 217040066236818779, guid: a8f8f3948c6d403469587bfb474abebe, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 217040066236818779, guid: a8f8f3948c6d403469587bfb474abebe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -424,7 +424,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3712217805674728535, guid: cddf73afacff957479db9e47326e283f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3712217805674728535, guid: cddf73afacff957479db9e47326e283f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -472,3 +472,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cddf73afacff957479db9e47326e283f, type: 3}
+--- !u!1001 &9065670000009886762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.388404
+      objectReference: {fileID: 0}
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.227879
+      objectReference: {fileID: 0}
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 240273276336279989, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584992864014650127, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+      propertyPath: m_Name
+      value: Plat_Cloud
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
