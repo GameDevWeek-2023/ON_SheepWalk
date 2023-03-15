@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 
 namespace sheepwalk
@@ -14,6 +15,7 @@ namespace sheepwalk
         [SerializeField] private LayerMask obstacleLayers;
         [SerializeField] private List<Transform> groundChecks;
         [SerializeField] private List<Transform> wallChecks;
+        [SerializeField] private PlayerDeath deathHandler;
 
         private float _hitCheckPrecision = 0.1f;
         private float _horizontalInput = 1f;
@@ -71,10 +73,18 @@ namespace sheepwalk
 
             if (_hasHitObstacle)
             {
-                Debug.Log("Hit obstacle. Should apply penalty");
+                Die();
+                //Debug.Log("Hit obstacle. Should apply penalty");
             }
-            
+        }
 
+        private void Die()
+        {
+            deathHandler.HandlePlayerDeath();
+            
+            //play some animation?
+            
+            Destroy(this);
         }
     }
 }

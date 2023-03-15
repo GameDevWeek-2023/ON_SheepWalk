@@ -93,6 +93,7 @@ namespace sheepwalk
             {
                 var newSection = Instantiate(prefabs[generatorState], new Vector3(_xOffset, height, depth),
                     prefabs[generatorState].transform.rotation);
+                
                 // adapt to work on simple collider objects? Or does add work?
                 var bounds = newSection.GetComponent<PrefabAABB>().bounds;
                 newSection.transform.Translate(-bounds.min.x, 0, 0);

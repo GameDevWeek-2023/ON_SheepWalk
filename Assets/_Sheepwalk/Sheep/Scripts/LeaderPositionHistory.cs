@@ -11,7 +11,7 @@ namespace sheepwalk
 
         public int historyLength;
 
-        [SerializeField] private Transform target;
+        public Transform target;
 
         // Start is called before the first frame update
         void Awake()
