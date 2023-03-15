@@ -1,6 +1,7 @@
 #Custom Additions#
 /Logs
 /UserSettings
+.vsconfig
 
 # =============== #
 # Unity generated #
@@ -17,8 +18,7 @@ sysinfo.txt
 
 # Unity3D generated meta files
 *.pidb.meta
-*.meta
-.vsconfig
+
 
 # Builds
 *.apk
