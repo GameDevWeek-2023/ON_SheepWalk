@@ -12,16 +12,21 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         _offset = transform.position - target.position;
+        _desiredTargetPos = _offset;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        _desiredTargetPos = _offset + new Vector3(target.position.x, 0, target.position.z);
-        if (Mathf.Abs(transform.position.y - target.position.y - _offset.y) > 3)
+        if (target != null)
         {
-            _desiredTargetPos += new Vector3(0, target.position.y, 0);
+            _desiredTargetPos = _offset + new Vector3(target.position.x, 0, target.position.z);
+            if (Mathf.Abs(transform.position.y - target.position.y - _offset.y) > 3)
+            {
+                _desiredTargetPos += new Vector3(0, target.position.y, 0);
+            }
         }
         transform.position = Vector3.Lerp(transform.position, _desiredTargetPos, Time.deltaTime * 3);
+        
     }
 }

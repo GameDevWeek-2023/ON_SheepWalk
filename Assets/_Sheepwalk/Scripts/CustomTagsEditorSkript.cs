@@ -3,8 +3,8 @@
  using UnityEditorInternal;
  
  //https://answers.unity.com/questions/1470694/multiple-tags-for-one-gameobject.html
- [CustomEditor(typeof(CustomTags))]
- public class CustomTagEditor : Editor
+ [CustomEditor(typeof(sheepwalk.CustomTags))]
+    public class CustomTagEditor : Editor
  {
      private string[] unityTags;
      SerializedProperty tagsProp;

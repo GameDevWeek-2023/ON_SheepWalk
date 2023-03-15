@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds:
-    m_Center: {x: -1, y: 0, z: 0}
-    m_Extent: {x: 1.5, y: 0.5, z: 0.5}
+    m_Center: {x: -1, y: 0.5, z: 0}
+    m_Extent: {x: 1.5, y: 1, z: 0.5}
 --- !u!1001 &3796336892422615502
 PrefabInstance:
   m_ObjectHideFlags: 0

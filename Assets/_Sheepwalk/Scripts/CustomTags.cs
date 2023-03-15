@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomTags : MonoBehaviour
+namespace  sheepwalk
 {
+    public class CustomTags : MonoBehaviour
+    {
         [SerializeField]
         private List<string> tags = new List<string>();
      
@@ -31,4 +33,5 @@ public class CustomTags : MonoBehaviour
         {
             get { return tags.Count; }
         }
+    }   
 }
