@@ -8,6 +8,8 @@ TagManager:
   - player
   - sheep
   - follower
+  - free
+  - pawn
   layers:
   - Default
   - TransparentFX

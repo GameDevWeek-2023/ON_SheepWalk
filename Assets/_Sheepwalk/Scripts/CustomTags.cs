@@ -28,6 +28,19 @@ namespace  sheepwalk
         {
             return tags[index];
         }
+
+        public bool Remove(string tagName)
+        {
+            return tags.Remove(tagName);
+        }
+        
+        public void Add(string tagName)
+        {
+            if (tagName != null && !HasTag(tagName)) 
+            {
+                tags.Add(tagName);
+            }
+        }
      
         public int Count
         {

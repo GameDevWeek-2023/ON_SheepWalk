@@ -1,22 +1,26 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using sheepwalk;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FollowLeader : MonoBehaviour
 {
     public float optimalSecondDistance = 0.2f;
     [SerializeField] private sheepwalk.LeaderPositionHistory _leaderHistory;
-
-    private float fpsEstimate = 20f;
-    private float fpsEstimateDecay = 0.9f;
-    private float eps = (float)1e-6;
-    private int currentIndex = 0;
-    private int targetIndex = 0;
-    private Vector3 offset;
+    
+    private int _currentIndex = 0;
+    private int _targetIndex = 0;
+    public Vector3 offset;
 
     private void Start()
     {
+        var leaderHistory = transform.parent.gameObject.GetComponent<LeaderPositionHistory>();
+        if (leaderHistory != null)
+        {
+            _leaderHistory = leaderHistory;
+        }
         offset = transform.position - _leaderHistory.target.transform.position;
         offset.x = 0;
     }
@@ -24,22 +28,20 @@ public class FollowLeader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fpsEstimate = fpsEstimateDecay * fpsEstimate + (1 - fpsEstimateDecay) / (Time.deltaTime + eps);
-        targetIndex = _leaderHistory.historyLength - 1 - Mathf.CeilToInt(fpsEstimate * optimalSecondDistance);
+        _targetIndex = _leaderHistory.HistoryLength - 1 - Mathf.CeilToInt(_leaderHistory.FPSEstimate * optimalSecondDistance);
 
         if (_leaderHistory.PositionHistory.Count > 0)
         {
-            currentIndex -= 1;
-            if (currentIndex < targetIndex)
+            _currentIndex -= 1;
+            if (_currentIndex < _targetIndex)
             {
-                currentIndex++;
-                if (currentIndex < targetIndex) currentIndex++;
+                _currentIndex++;
+                if (_currentIndex < _targetIndex) _currentIndex++;
             }
 
-            currentIndex = Math.Min(Math.Max(0, currentIndex), _leaderHistory.PositionHistory.Count-1);
+            _currentIndex = Math.Min(Math.Max(0, _currentIndex), _leaderHistory.PositionHistory.Count-1);
 
-            transform.position = _leaderHistory.PositionHistory[currentIndex] + offset;
+            transform.position = _leaderHistory.PositionHistory[_currentIndex] + offset;
         }
-
     }
 }

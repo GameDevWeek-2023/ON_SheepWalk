@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.1837436, g: 0.22913556, b: 0.3046199, a: 1}
+  m_IndirectSpecularColor: {r: 0.18374306, g: 0.22913486, b: 0.30461875, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -238,6 +238,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 848027961064411351, guid: 87a841ecacd46fa429b508e397e2aeea, type: 3}
   m_PrefabInstance: {fileID: 848027961969193039}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &383860341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383860342}
+  m_Layer: 0
+  m_Name: SheepPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &383860342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383860341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.7647872, y: 1.5004712, z: -2.2307622}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &665620982
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +281,7 @@ GameObject:
   - component: {fileID: 665620985}
   - component: {fileID: 665620984}
   - component: {fileID: 665620986}
+  - component: {fileID: 665620987}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -335,6 +367,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
   - player
+--- !u!114 &665620987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665620982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475eeabe47383a24dbc7375ff69bfe77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sheepHerd: {fileID: 1247114234}
+  followDistance: 2
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optimalSecondDistance: 1
   _leaderHistory: {fileID: 1247114233}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1247114232
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,8 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2619cce8bb80450458bb3cf8530d44b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PositionHistory: []
-  historyLength: 100
+  _historyLength: 300
   target: {fileID: 665620983}
 --- !u!4 &1247114234
 Transform:
@@ -812,15 +858,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   depth: 0
   height: 0
-  generatorState: 0
+  generatorState: 3
   initialOffset: 10.5
   _referenceCamera: {fileID: 963194227}
   prefabs:
   - {fileID: 3694317119429100845, guid: 90f52d0ce084f0b4bb6b5f8b933780d5, type: 3}
-  - {fileID: 4827448777509448430, guid: 5dbdea714b8e4284a988fd3a3fe5cd34, type: 3}
-  - {fileID: 1808747720602336516, guid: 6cd6ef4634884ae46a659ae9711cdff5, type: 3}
-  - {fileID: 4265417489711277760, guid: 3b20c499cf2c2bb4ca0ac257674ec233, type: 3}
-  - {fileID: 6334461511286221684, guid: 971647b563706a34d99b62057a02ea7d, type: 3}
+  - {fileID: 6334461511286221684, guid: cddf73afacff957479db9e47326e283f, type: 3}
+  - {fileID: 1808747720602336516, guid: 347acc239fb7f294688746360eb371a1, type: 3}
+  - {fileID: 1808747720602336516, guid: 347acc239fb7f294688746360eb371a1, type: 3}
+  - {fileID: 5955158959408118429, guid: 284bb23ee9fbe0349824288549d1bb42, type: 3}
   closenessThreshold: 0.2
 --- !u!1 &1666950529
 GameObject:
@@ -865,6 +911,7 @@ GameObject:
   - component: {fileID: 1837714284}
   - component: {fileID: 1837714283}
   - component: {fileID: 1837714282}
+  - component: {fileID: 1837714285}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -896,7 +943,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1837714280}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -951,6 +998,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837714280}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1837714285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837714280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8dd7d414ce0e0418b8d465975180ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - pawn
 --- !u!4 &1974986390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6209792459189058930, guid: 29b4ddb52b001eb4495c31a90652078e, type: 3}
