@@ -10,7 +10,7 @@ public class FollowLeader : MonoBehaviour
     public float optimalSecondDistance = 0.2f;
     [SerializeField] private sheepwalk.LeaderPositionHistory _leaderHistory;
     
-    private int _currentIndex = 0;
+    public int currentIndex = 0;
     private int _targetIndex = 0;
     public Vector3 offset;
 
@@ -32,16 +32,16 @@ public class FollowLeader : MonoBehaviour
 
         if (_leaderHistory.PositionHistory.Count > 0)
         {
-            _currentIndex -= 1;
-            if (_currentIndex < _targetIndex)
+            currentIndex -= 1;
+            if (currentIndex < _targetIndex)
             {
-                _currentIndex++;
-                if (_currentIndex < _targetIndex) _currentIndex++;
+                currentIndex++;
+                if (currentIndex < _targetIndex) currentIndex++;
             }
 
-            _currentIndex = Math.Min(Math.Max(0, _currentIndex), _leaderHistory.PositionHistory.Count-1);
+            currentIndex = Math.Min(Math.Max(0, currentIndex), _leaderHistory.PositionHistory.Count-1);
 
-            transform.position = _leaderHistory.PositionHistory[_currentIndex] + offset;
+            transform.position = _leaderHistory.PositionHistory[currentIndex] + offset;
         }
     }
 }

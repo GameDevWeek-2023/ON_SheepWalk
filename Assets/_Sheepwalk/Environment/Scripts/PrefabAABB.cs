@@ -10,7 +10,7 @@ public class PrefabAABB : MonoBehaviour
     /// </summary>
     public Bounds bounds;
     private Transform _transform;
- 
+    
     void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position + bounds.center, bounds.size);
@@ -20,7 +20,7 @@ public class PrefabAABB : MonoBehaviour
     {
         RecalculateBounds();
     }
- 
+ #if False
     public Bounds WorldBounds ()
     {
         if (_transform == null)
@@ -38,8 +38,9 @@ public class PrefabAABB : MonoBehaviour
  
         return b;
     }
+#endif
  
-    [ContextMenu("Recalculate Bounds")]
+    //[ContextMenu("Recalculate Bounds")]
     public void RecalculateBounds ()
     {
         var thisMeshRenderer = GetComponent<MeshRenderer>();
@@ -68,7 +69,7 @@ public class PrefabAABB : MonoBehaviour
         bounds.center -= transform.position;
     }
  
-#if UNITY_EDITOR
+#if (UNITY_EDITOR)
      void Update()
      {
          if (Application.isPlaying) return;

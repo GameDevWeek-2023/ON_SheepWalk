@@ -1,3 +1,4 @@
+#if (UNITY_EDITOR)
  using UnityEditor;
  using UnityEngine;
  using UnityEditorInternal;
@@ -86,3 +87,4 @@
          GUILayout.Space(3);
      }
  }
+ #endif

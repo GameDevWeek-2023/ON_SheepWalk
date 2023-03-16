@@ -11,16 +11,6 @@ namespace sheepwalk
 
         [SerializeField] private float followDistance;
         // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         private void ReplaceWith(CustomTags child, CustomTags other)
         {
@@ -32,10 +22,13 @@ namespace sheepwalk
             PushBackHerd(followDistance);
             child.transform.parent = sheepHerd.transform;
             var follow = child.AddComponent<FollowLeader>();
+            follow.currentIndex = sheepHerd.GetComponent<LeaderPositionHistory>().HistoryLength-2;
             follow.optimalSecondDistance = followDistance;
+            follow.transform.localScale.Scale(Vector3.one*0.7f);
             //follow.offset = child.transform.position - transform.position;
             // move to other
             transform.position = other.transform.position;
+            // push up to foot?
 
             other.transform.parent = transform;
             

@@ -26,7 +26,6 @@ namespace sheepwalk
         void Start()
         {
             // Set to start state
-
             _xOffset = initialOffset;
 
             var transitionComponent = gameObject.GetComponent<sheepwalk.StateTransitionDict>();
@@ -54,7 +53,8 @@ namespace sheepwalk
 
         public static bool CheckPointCloseRight(Vector3 point, float threshold)
         {
-            return (point.z > 0f && point.x - 1 < threshold && point.x >= 1f);
+            return (point.z > 0f && point.x - 1 < threshold);
+            //&& point.x >= 1f
         }
         
         public static bool CheckPointCloseLeft(Vector3 point, float threshold)
@@ -68,6 +68,7 @@ namespace sheepwalk
         }
         void spawnPrefab()
         {
+            //Debug.Log("Should Spawn");
             if (transitiongraph.ContainsKey(generatorState))
             {
                 var transitions = transitiongraph[generatorState];
@@ -89,13 +90,16 @@ namespace sheepwalk
             }
             
             // else?
+            
             if (generatorState < prefabs.Count && generatorState >= 0)
             {
+                //Debug.Log("Actually Attempting Spawn");
                 var newSection = Instantiate(prefabs[generatorState], new Vector3(_xOffset, height, depth),
                     prefabs[generatorState].transform.rotation);
-                
+
                 // adapt to work on simple collider objects? Or does add work?
                 var bounds = newSection.GetComponent<PrefabAABB>().bounds;
+                //Debug.Log(bounds);
                 newSection.transform.Translate(-bounds.min.x, 0, 0);
                 _xOffset += bounds.size.x;
                 // Is this centered or dependent on pivot?
