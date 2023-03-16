@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreMenu : MonoBehaviour
 {
@@ -28,9 +29,14 @@ public class ScoreMenu : MonoBehaviour
         scorePanel.gameObject.SetActive(true);
         //Display and Calculate Scores
         distanceScore.text = "" + ScoreCounter.distanceCount;
+
         snoozeNum.text = "" + ScoreCounter.snoozeCount;
         snoozeTotal = ScoreCounter.snoozeCount * snoozeMult;
         snoozeFinal.text = "" + snoozeTotal;
+
+        sheepNum.text = "" + ScoreCounter.sheepCount;
+        sheepTotal = ScoreCounter.sheepCount * sheepMult;
+        sheepFinal.text = "" + sheepTotal;
 
         totalScore = snoozeTotal + ScoreCounter.distanceCount; /*+sheepTotal*/
         finalScore.text = "" + totalScore;
@@ -38,16 +44,18 @@ public class ScoreMenu : MonoBehaviour
         //Reset Scores
         ScoreCounter.distanceCount = 0;
         ScoreCounter.snoozeCount = 0;
+        ScoreCounter.sheepCount = 0;
     }
     public void RetryButton()
     {
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("GameLevel");
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
         print("RestartGame");
     }
 
     public void QuitToMenu()
      {
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("StartMenu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Start Menu");
         print("Back to Menu");
      }
       

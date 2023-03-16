@@ -8,7 +8,12 @@ public class ScoreCounter : MonoBehaviour
 {
     public static int snoozeCount;
     public TMP_Text snoozeText;
+
+    public static int sheepCount = 0;
+    public TMP_Text sheepText;
+
     public static int distanceCount = 0;
+    public int distMult;
     public TMP_Text distText;
 
     public GameObject player;
@@ -21,9 +26,11 @@ public class ScoreCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        snoozeText.text = "SC " + ScoreCounter.snoozeCount;
+        snoozeText.text = "Zees " + snoozeCount;
 
-        distanceCount = Mathf.RoundToInt(player.transform.localPosition.x);
+        sheepText.text = "Sheep " + sheepCount;
+
+        distanceCount = Mathf.RoundToInt(player.transform.localPosition.x)*distMult;
         distText.text = "Distance " + distanceCount;
     }
 }
