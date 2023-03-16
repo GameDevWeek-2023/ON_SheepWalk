@@ -19,9 +19,10 @@ namespace sheepwalk
             child.Add("follower");
             other.Remove("free");
             other.Add("pawn");
-            PushBackHerd(followDistance);
+            PushBackHerdOptDist(followDistance);
             
             Vector3 offsetVector = child.transform.localPosition;
+            offsetVector.y += 0.1f;
             child.transform.parent = sheepHerd.transform;
             var follow = child.AddComponent<FollowLeader>();
             LeaderPositionHistory historyComponent = sheepHerd.GetComponent<LeaderPositionHistory>();
@@ -34,19 +35,20 @@ namespace sheepwalk
             //if (comp2 != null) comp2.enabled = false;
             //follow.offset = child.transform.position - transform.position;
             follow.offset = offsetVector;
-            //child.transform.position = offsetVector;
+            //Smooth history
+            FillFollowSkip(other.transform);
+            
             // move to other
             transform.position = other.transform.position;
             //Debug.Log(historyComponent.Distances[^1]);
             //Debug.Log(historyComponent.Distances[^2]);
             //Debug.Log(historyComponent.Distances[^3]);
             // push up to foot?
-
             other.transform.parent = transform;
             
         }
 
-        private void PushBackHerd(float amount)
+        private void PushBackHerdOptDist(float amount)
         {
             var children = sheepHerd.GetComponentsInChildren<FollowLeader>();
             foreach (var child in children)
@@ -54,19 +56,42 @@ namespace sheepwalk
                 child.optimalDistance += amount;
             }
         }
+        
+        private void PushBackHerdCurrentIndices(int amount)
+        {
+            var children = sheepHerd.GetComponentsInChildren<FollowLeader>();
+            foreach (var child in children)
+            {
+                child.currentIndex -= amount;
+            }
+        }
 
-        private void FillFollowSkip(Vector3 skip)
+        private void FillFollowSkip(Transform refTransform)
         {
             var positionHistory = sheepHerd.GetComponent<LeaderPositionHistory>();
             var charMovement = gameObject.GetComponent<CharacterMovement>();
+
             // Unsure if can be equal
             var lastPos = positionHistory.PositionHistory[^1];
             //should be child pos. what am i even logging??
-            var distance = transform.position - lastPos;
-            var numberFrames = distance.magnitude / charMovement.runSpeed * positionHistory.FPSEstimate;
-
-
-            //Todo: Add positions -> requires some speed in distance...
+            var moveVector = refTransform.position - lastPos;
+            Debug.Log("Skip Length "+moveVector.magnitude);
+            Debug.Log(refTransform.position);
+            Debug.Log(lastPos);
+            var numberFrames = Mathf.FloorToInt(Mathf.Abs(moveVector.x) / charMovement.runSpeed * positionHistory.FPSEstimate - 0.01f);
+            if (numberFrames<1) return;
+            Vector3 step = moveVector / numberFrames;
+            Vector3 currentPos = lastPos;
+            for (int i = 0; i < numberFrames; i++)
+            {
+                currentPos += step;
+                positionHistory.Add(currentPos);
+            }
+            Debug.Log("Added "+numberFrames+" PseudoPositions");
+            
+            //add new pawn reference to movement Controller
+            charMovement.pawn = refTransform;
+            PushBackHerdCurrentIndices(numberFrames);
         }
 
         public void SwitchPawn(Transform other)

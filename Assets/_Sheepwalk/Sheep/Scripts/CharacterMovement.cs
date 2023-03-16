@@ -10,6 +10,7 @@ namespace sheepwalk
         public float gravity = -50f;
         public float runSpeed = 1f;
         public float jumpHeight = 2f;
+        public Transform pawn;
         [SerializeField] private LayerMask groundLayers;
         [SerializeField] private LayerMask obstacleLayers;
         [SerializeField] private List<Transform> groundChecks;
@@ -29,6 +30,18 @@ namespace sheepwalk
         void Start()
         {
             _characterController = GetComponent<CharacterController>();
+            
+            var childrenWithTags = gameObject.GetComponentsInChildren<CustomTags>();
+
+            foreach (var child in childrenWithTags)
+            {
+                if (child.HasTag("pawn"))
+                {
+                    pawn = child.transform;        
+                    break;
+                }
+            }
+             
         }
 
         // Update is called once per frame
@@ -73,7 +86,7 @@ namespace sheepwalk
             
             // can check for tags of hit? OverlapSphere -> Collider -> Gameobject -> CustomTags
             // not needed?
-            _leaderPositionHistory.Add(transform.position);
+            _leaderPositionHistory.Add(pawn.position);
 
             if (_hasHitObstacle)
             {
