@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using UnityEngine;
 
 namespace sheepwalk
@@ -16,6 +15,8 @@ namespace sheepwalk
         [SerializeField] private List<Transform> groundChecks;
         [SerializeField] private List<Transform> wallChecks;
         [SerializeField] private PlayerDeath deathHandler;
+        [SerializeField] private float speedIncreasePerSecond = 0.01f;
+        [SerializeField] private LeaderPositionHistory _leaderPositionHistory;
 
         private float _hitCheckPrecision = 0.1f;
         private float _horizontalInput = 1f;
@@ -33,6 +34,7 @@ namespace sheepwalk
         // Update is called once per frame
         void Update()
         {
+            runSpeed += speedIncreasePerSecond * Time.deltaTime;
             // Base Forward Movement
             _velocity.x = _horizontalInput * runSpeed;
             
@@ -70,12 +72,15 @@ namespace sheepwalk
             }
             
             // can check for tags of hit? OverlapSphere -> Collider -> Gameobject -> CustomTags
+            // not needed?
+            _leaderPositionHistory.Add(transform.position);
 
             if (_hasHitObstacle)
             {
                 Die();
                 //Debug.Log("Hit obstacle. Should apply penalty");
             }
+            
         }
 
         private void Die()

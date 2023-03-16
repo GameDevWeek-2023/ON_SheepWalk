@@ -19,7 +19,7 @@ namespace sheepwalk
 
         private IEnumerator RespawnCoroutine()
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2.5f);
             Respawn();
         }
 

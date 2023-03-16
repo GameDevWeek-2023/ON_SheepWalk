@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace sheepwalk.util
 {
@@ -67,14 +66,15 @@ namespace sheepwalk.util
             get
             {
                 if (index < -_size || index > _size - 1) 
-                    throw new ArgumentException("Index " + index + " out of range.");
-
+                    throw new IndexOutOfRangeException("Index " + index + " out of range.");
+                if (index < 0) index = _size - index;
                 return _buffer[CircularAdd(_start, index)];
             }
             set
             {
                 if (index < -_size || index > _size - 1) 
                     throw new ArgumentException("Index " + index + " out of range.");
+                if (index < 0) index = _size - index;
                 _buffer[CircularAdd(_start, index)] = value;
             }
         }
