@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class StartMenu : MonoBehaviour
 {
     public GameObject MainMenu;
-    public GameObject ControlsMenu;
+    public GameObject ControlsPanel;
 
     public Button ReturnControls;
     public Button StartButton;
@@ -29,13 +29,13 @@ public class StartMenu : MonoBehaviour
     {
         // Show Credits Menu
         MainMenu.SetActive(false);
-        ControlsMenu.SetActive(false);
+        ControlsPanel.SetActive(false);
     }
 
     public void ControlsButton()
     {
         MainMenu.SetActive(false);
-        ControlsMenu.SetActive(true);
+        ControlsPanel.SetActive(true);
         ReturnControls.Select();
     }
 
@@ -43,7 +43,7 @@ public class StartMenu : MonoBehaviour
     {
         // Show Main Menu
         MainMenu.SetActive(true);
-        ControlsMenu.SetActive(false);
+        ControlsPanel.SetActive(false);
         StartButton.Select();
     }
 
