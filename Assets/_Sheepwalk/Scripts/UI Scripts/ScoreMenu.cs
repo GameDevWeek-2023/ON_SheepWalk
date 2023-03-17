@@ -22,11 +22,13 @@ public class ScoreMenu : MonoBehaviour
     public int totalScore = 0;
 
     public GameObject scorePanel;
+    public GameObject inGameMenu;
 
     public void DisplayScore()
     {
         print("score");
         scorePanel.gameObject.SetActive(true);
+        inGameMenu.gameObject.SetActive(false);
         //Display and Calculate Scores
         distanceScore.text = "" + ScoreCounter.distanceCount;
 
