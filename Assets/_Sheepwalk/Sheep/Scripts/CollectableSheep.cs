@@ -12,6 +12,7 @@ public class CollectableSheep : MonoBehaviour
         if (tags == null || !tags.HasTag("player")) return;
         var player = other.gameObject.GetComponent<CharacterSwitch>();
         if (player != null) player.SwitchPawn(transform);
-
+        //increase sheep score
+        ScoreCounter.sheepCount += 1;
     }
 }
