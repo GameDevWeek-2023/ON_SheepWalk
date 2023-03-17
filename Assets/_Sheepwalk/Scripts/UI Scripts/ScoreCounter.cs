@@ -29,8 +29,7 @@ public class ScoreCounter : MonoBehaviour
         snoozeText.text = "Zees " + snoozeCount;
 
         sheepText.text = "Sheep " + sheepCount;
-
-        distanceCount = Mathf.RoundToInt(player.transform.localPosition.x)*distMult;
+        if (player != null) distanceCount = Mathf.RoundToInt(player.transform.localPosition.x)*distMult;
         distText.text = "Distance " + distanceCount;
     }
 }

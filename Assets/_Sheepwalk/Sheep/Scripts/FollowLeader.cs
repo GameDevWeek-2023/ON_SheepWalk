@@ -17,9 +17,9 @@ public class FollowLeader : MonoBehaviour
         if (leaderHistory != null)
         {
             this.leaderHistory = leaderHistory;
+            offset = transform.position - this.leaderHistory.target.transform.position;
+            offset.x = 0;
         }
-        offset = transform.position - this.leaderHistory.target.transform.position;
-        offset.x = 0;
     }
 
     // Update is called once per frame

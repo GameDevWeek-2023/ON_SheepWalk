@@ -14,8 +14,22 @@ public class BouncePlatform : MonoBehaviour
     private Vector3 _originalScale;
     private float _minYScaleFactor = 0.5f;
     private float _yScaleFactor = 1f;
-    
-    
+
+    private Collider _collider;
+
+    private void Start()
+    {
+        var colls = gameObject.GetComponents<Collider>();
+        foreach (var coll in colls)
+        {
+            if (!coll.isTrigger)
+            {
+                _collider = coll;
+            }
+        }
+    }
+
+
     void Update()
     {
         if (!_active) return;
@@ -49,10 +63,22 @@ public class BouncePlatform : MonoBehaviour
             if (_characterMovement == null) return;
 
             var tags = _characterMovement.Pawn.GetComponent<CustomTags>();
-            if (tags == null || !tags.HasTag("pawn") || !tags.HasTag("canBounce")) return;
-            _active = true;
-            _animationTime = -_animationTime;
-            _originalScale = transform.localScale;
+            if (tags == null || !tags.HasTag("pawn")) return;
+            if (tags.HasTag("canBounce"))
+            {
+                _active = true;
+                _animationTime = -_animationTime;
+                _originalScale = transform.localScale;   
+            }
+            else
+            {
+                if (_collider != null) _collider.enabled = false;
+            }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (_collider != null) _collider.enabled = true;
     }
 }
