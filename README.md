@@ -1,7 +1,7 @@
 # SheepWalk
 
-### A dreamy sheep rhythm game
+### A dreamy sheep endless runner
 
-Concept: Help counting sheep by leading a herd of sheep to the rhythm over obstacles.
+Concept: Help counting sheep by leading a herd of sheep over obstacles.
 
 Genre: Lofi Endless Runner / Sidescroller
