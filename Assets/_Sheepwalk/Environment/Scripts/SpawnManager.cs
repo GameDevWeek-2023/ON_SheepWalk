@@ -12,24 +12,29 @@ namespace sheepwalk
     {
         public float depth = 0f;
         public float height = 0f;
+        public float standardGap = 1.5f;
+        public float scale = 1f;
         public int generatorState = 0;
 
         [SerializeField] private float initialOffset = 0f;
         [SerializeField] private Camera _referenceCamera;
         [SerializeField] private List<GameObject> prefabs;
         [SerializeField] private float closenessThreshold = 0.2f;
-        [SerializeField] private float standardGap = 1.5f;
 
         private Dictionary<int, List<NodeTransition>> transitiongraph;
+        private RandomizeSpawn _randomizeSpawn;
+        private float _chosenScale;
+
         private float _xOffset;
 
         // Start is called before the first frame update
         void Start()
         {
+            _randomizeSpawn = GetComponent<RandomizeSpawn>();   
             // Set to start state
             _xOffset = initialOffset;
 
-            var transitionComponent = gameObject.GetComponent<sheepwalk.StateTransitionDict>();
+            var transitionComponent = gameObject.GetComponent<StateTransitionDict>();
             if (transitionComponent != null)
             {
                 transitiongraph = transitionComponent.GetTransitionGraph();
@@ -48,7 +53,7 @@ namespace sheepwalk
             var shouldSpawn =
                 CheckPointCloseRight(_referenceCamera.WorldToViewportPoint(new Vector3(_xOffset, height, depth)),
                     closenessThreshold);
-            if (shouldSpawn) spawnPrefab();
+            if (shouldSpawn) SpawnPrefab();
 
         }
 
@@ -67,7 +72,8 @@ namespace sheepwalk
         {
             return (point.z > 0f && point.x < -threshold);
         }
-        void spawnPrefab()
+        
+        void SpawnPrefab()
         {
             //Debug.Log("Should Spawn");
             if (transitiongraph.ContainsKey(generatorState))
@@ -94,21 +100,38 @@ namespace sheepwalk
             
             if (generatorState < prefabs.Count && generatorState >= 0)
             {
+                Vector3 spawnPosition;
+                if (_randomizeSpawn != null)
+                {
+                    spawnPosition = new Vector3(_xOffset, _randomizeSpawn.Height,
+                        _randomizeSpawn.Depth);
+                }
+                else spawnPosition = new Vector3(_xOffset+standardGap, height, depth);
+
+                
                 //Debug.Log("Actually Attempting Spawn");
-                var newSection = Instantiate(prefabs[generatorState], new Vector3(_xOffset, height, depth),
+                var newSection = Instantiate(prefabs[generatorState], spawnPosition,
                     prefabs[generatorState].transform.rotation);
+                // set new as child
+                newSection.transform.parent = transform;
+                // Scale
+                _chosenScale = _randomizeSpawn != null ? _randomizeSpawn.Scale : scale;
+                newSection.transform.localScale = Vector3.one * _chosenScale;
+
+                //bounds scale??
 
                 // adapt to work on simple collider objects? Or does add work?
                 var bounds = newSection.GetComponent<PrefabAABB>().bounds;
                 //Debug.Log(bounds);
-                newSection.transform.Translate(-bounds.min.x, 0, 0);
-                _xOffset += bounds.size.x;
-                _xOffset += standardGap;
+                newSection.transform.Translate(-bounds.min.x*_chosenScale, 0, 0);
+                
+                _xOffset += bounds.size.x*_chosenScale;
+                _xOffset += _randomizeSpawn != null ? _randomizeSpawn.Spacing : standardGap;
                 // Is this centered or dependent on pivot?
                 var destroyComponent = newSection.AddComponent<DestroyOutOfView>();
                 //- bounds.center.x
-                destroyComponent.Initialize(new Vector3(newSection.transform.position.x  + 2*bounds.extents.x, height, depth), _referenceCamera, closenessThreshold);
-                    
+                destroyComponent.Initialize(new Vector3(newSection.transform.position.x  + 2*bounds.extents.x*_chosenScale, spawnPosition.y, spawnPosition.z), _referenceCamera, closenessThreshold);
+
             }
         }
     }
