@@ -15,7 +15,7 @@ namespace sheepwalk
             if (scoreMenu != null) scoreMenu.DisplayScore();
             //Respawn
             //Should probably lie on some respawn button
-            StartCoroutine(nameof(RespawnCoroutine));
+            //StartCoroutine(nameof(RespawnCoroutine));
         }
 
         private IEnumerator RespawnCoroutine()

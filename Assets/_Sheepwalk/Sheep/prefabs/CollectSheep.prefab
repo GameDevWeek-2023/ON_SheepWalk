@@ -50,6 +50,7 @@ MonoBehaviour:
   tags:
   - sheep
   - free
+  - canBounce
 --- !u!136 &1291571373629044712
 CapsuleCollider:
   m_ObjectHideFlags: 0

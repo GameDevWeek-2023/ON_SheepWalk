@@ -48,7 +48,7 @@ public class BouncePlatform : MonoBehaviour
             _characterMovement = other.gameObject.GetComponent<CharacterMovement>();
             if (_characterMovement == null) return;
 
-            var tags = _characterMovement.pawn.GetComponent<CustomTags>();
+            var tags = _characterMovement.Pawn.GetComponent<CustomTags>();
             if (tags == null || !tags.HasTag("pawn") || !tags.HasTag("canBounce")) return;
             _active = true;
             _animationTime = -_animationTime;

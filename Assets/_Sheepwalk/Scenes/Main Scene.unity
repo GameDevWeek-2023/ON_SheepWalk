@@ -1046,6 +1046,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466215975}
   m_CullTransparentMesh: 1
+--- !u!1 &533358068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533358071}
+  - component: {fileID: 533358070}
+  - component: {fileID: 533358069}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &533358069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533358068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &533358070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533358068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &533358071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533358068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &550590877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,7 +1379,6 @@ MonoBehaviour:
   gravity: -20
   runSpeed: 6
   jumpHeight: 3
-  pawn: {fileID: 0}
   groundLayers:
     serializedVersion: 2
     m_Bits: 192
@@ -1326,6 +1393,10 @@ MonoBehaviour:
   deathHandler: {fileID: 217600073}
   speedIncreasePerSecond: 0.01
   _leaderPositionHistory: {fileID: 1247114233}
+  dashDistance: 3
+  dashCD: 1
+  dashSpeedFactor: 3
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &665620985
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3299,7 +3370,7 @@ MonoBehaviour:
   - {fileID: 6334461511286221684, guid: cddf73afacff957479db9e47326e283f, type: 3}
   - {fileID: 584992864014650127, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
   - {fileID: 1808747720602336516, guid: 347acc239fb7f294688746360eb371a1, type: 3}
-  - {fileID: 584992864014650127, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+  - {fileID: 1808747720602336516, guid: 347acc239fb7f294688746360eb371a1, type: 3}
   closenessThreshold: 0.2
 --- !u!1 &1465967962
 GameObject:

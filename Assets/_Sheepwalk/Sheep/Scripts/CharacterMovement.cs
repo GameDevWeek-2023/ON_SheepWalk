@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +11,40 @@ namespace sheepwalk
         public float gravity = -50f;
         public float runSpeed = 1f;
         public float jumpHeight = 2f;
-        public Transform pawn;
+        private Transform _pawn;
         [SerializeField] private LayerMask groundLayers;
         [SerializeField] private LayerMask obstacleLayers;
         [SerializeField] private List<Transform> groundChecks;
         [SerializeField] private List<Transform> wallChecks;
         [SerializeField] private PlayerDeath deathHandler;
-        [SerializeField] private float speedIncreasePerSecond = 0.01f;
+        [SerializeField] private float speedIncreasePerSecond = 0.05f;
         [SerializeField] private LeaderPositionHistory _leaderPositionHistory;
-
+        [SerializeField] private float dashDistance = 3f;
+        [SerializeField] private float dashCD = 1f;
+        [SerializeField] private float dashSpeedFactor = 3f;
+        private bool _mayDash = false;
+        private bool _canDash = false;
+        private float _remainingDashDistance = 0f;
+        private float _remainingDashCD = 0f;
+        private bool _wasGrounded = false;
+        
         private float _hitCheckPrecision = 0.1f;
         private float _horizontalInput = 1f;
         private CharacterController _characterController; 
         public Vector3 velocity;
         private bool _isGrounded;
         private bool _hasHitObstacle;
+
+        public Transform Pawn
+        {
+            get { return _pawn; }
+            set
+            {
+                _pawn = value;
+                var tags = GetComponent<CustomTags>();
+                if (tags != null) _mayDash = tags.HasTag("canDash");
+            }
+        } 
 
         // Start is called before the first frame update
         void Start()
@@ -37,11 +57,13 @@ namespace sheepwalk
             {
                 if (child.HasTag("pawn"))
                 {
-                    pawn = child.transform;        
+                    Pawn = child.transform;
                     break;
                 }
+                
             }
-             
+
+
         }
 
         // Update is called once per frame
@@ -74,7 +96,30 @@ namespace sheepwalk
                 Jump(jumpHeight);
             }
 
+            if (_mayDash && _canDash && Input.GetButtonDown("Dash"))
+            {
+                _remainingDashDistance = dashDistance;
+                _canDash = false;
+                _remainingDashCD = dashCD;
+            }
+
+            if (_remainingDashDistance > 0)
+            {
+                velocity.x += _horizontalInput * runSpeed * dashSpeedFactor;
+            }
+
             _characterController.Move(velocity * Time.deltaTime);
+            
+            if (!_canDash)
+            {
+                _remainingDashCD -= Time.deltaTime;
+                _remainingDashDistance -= velocity.x * Time.deltaTime;
+                if (_isGrounded) _wasGrounded = true;
+                if (_wasGrounded && _remainingDashDistance <= 0f && _remainingDashCD <= 0f)
+                {
+                    _canDash = true;
+                }
+            }
             
             //Check for obstacle hit
             _hasHitObstacle = false;
@@ -83,10 +128,11 @@ namespace sheepwalk
                 _hasHitObstacle = true;
                 break;
             }
-            
+
+
             // can check for tags of hit? OverlapSphere -> Collider -> Gameobject -> CustomTags
             // not needed?
-            _leaderPositionHistory.Add(pawn.position);
+            _leaderPositionHistory.Add(_pawn.position);
 
             if (_hasHitObstacle)
             {

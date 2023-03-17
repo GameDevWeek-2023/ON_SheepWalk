@@ -11,6 +11,7 @@ TagManager:
   - free
   - pawn
   - canBounce
+  - canDash
   layers:
   - Default
   - TransparentFX

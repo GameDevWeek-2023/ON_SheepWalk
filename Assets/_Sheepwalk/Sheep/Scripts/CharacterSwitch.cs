@@ -75,9 +75,9 @@ namespace sheepwalk
             var lastPos = positionHistory.PositionHistory[^1];
             //should be child pos. what am i even logging??
             var moveVector = refTransform.position - lastPos;
-            Debug.Log("Skip Length "+moveVector.magnitude);
-            Debug.Log(refTransform.position);
-            Debug.Log(lastPos);
+            //Debug.Log("Skip Length "+moveVector.magnitude);
+            //Debug.Log(refTransform.position);
+            //Debug.Log(lastPos);
             var numberFrames = Mathf.FloorToInt(Mathf.Abs(moveVector.x) / charMovement.runSpeed * positionHistory.FPSEstimate - 0.01f);
             if (numberFrames<1) return;
             Vector3 step = moveVector / numberFrames;
@@ -90,7 +90,7 @@ namespace sheepwalk
             Debug.Log("Added "+numberFrames+" PseudoPositions");
             
             //add new pawn reference to movement Controller
-            charMovement.pawn = refTransform;
+            charMovement.Pawn = refTransform;
             PushBackHerdCurrentIndices(numberFrames);
         }
 
