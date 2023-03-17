@@ -21,12 +21,10 @@ public class CameraFollow : MonoBehaviour
         if (target != null)
         {
             _desiredTargetPos = _offset + new Vector3(target.position.x, 0, target.position.z);
-            if (Mathf.Abs(transform.position.y - target.position.y - _offset.y) > 3)
-            {
-                _desiredTargetPos += new Vector3(0, target.position.y, 0);
-            }
+            _desiredTargetPos.y = Mathf.Lerp(_desiredTargetPos.y,  target.position.y+_offset.y, Mathf.Abs(transform.position.y - target.position.y - _offset.y)/3);
+                
         }
-        transform.position = Vector3.Lerp(transform.position, _desiredTargetPos, Time.deltaTime * 3);
+        transform.position = Vector3.Lerp(transform.position, _desiredTargetPos, Time.deltaTime*2);
         
     }
 }

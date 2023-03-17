@@ -42,7 +42,7 @@ namespace sheepwalk
             Distances.Add(0f);
             if (PositionHistory.Count > 1)
             {
-                var currentStepLength = (PositionHistory[-1] - PositionHistory[-2]).magnitude;
+                var currentStepLength = (PositionHistory[^1] - PositionHistory[^2]).magnitude;
                 //Debug.Log(currentStepLength);
                 for (int i = 0; i < Distances.Count-1; i++)
                 {
