@@ -24,7 +24,9 @@ public class CameraFollow : MonoBehaviour
             _desiredTargetPos.y = Mathf.Lerp(_desiredTargetPos.y,  target.position.y+_offset.y, Mathf.Abs(transform.position.y - target.position.y - _offset.y)/3);
                 
         }
+        // timing on this lerp is somewhat arbitrary (could possibly never catchup to too fast player?)
         transform.position = Vector3.Lerp(transform.position, _desiredTargetPos, Time.deltaTime*2);
+        
         
     }
 }

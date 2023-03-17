@@ -47,8 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
   - pawn
-  - canBounce
-  - canDash
 --- !u!1001 &1955965071217729384
 PrefabInstance:
   m_ObjectHideFlags: 0

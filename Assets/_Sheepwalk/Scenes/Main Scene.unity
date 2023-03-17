@@ -1082,6 +1082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _historyLength: 3000
   target: {fileID: 665620983}
+  suggestSuicide: 0
 --- !u!4 &1247114234
 Transform:
   m_ObjectHideFlags: 0
