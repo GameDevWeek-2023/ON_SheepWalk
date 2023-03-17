@@ -24,21 +24,24 @@ public class ScoreMenu : MonoBehaviour
     public GameObject scorePanel;
     public GameObject inGameMenu;
 
+    public static bool gameOver = false;
+
     public void DisplayScore()
     {
         print("score");
+        gameOver = true;
         scorePanel.gameObject.SetActive(true);
         inGameMenu.gameObject.SetActive(false);
         //Display and Calculate Scores
         distanceScore.text = "" + ScoreCounter.distanceCount;
 
-        snoozeNum.text = "" + ScoreCounter.snoozeCount;
         snoozeTotal = ScoreCounter.snoozeCount * snoozeMult;
-        snoozeFinal.text = "" + snoozeTotal;
+        snoozeNum.text = "" + ScoreCounter.snoozeCount + " x " + snoozeMult;
+        snoozeFinal.text = "= " + snoozeTotal;
 
-        sheepNum.text = "" + ScoreCounter.sheepCount;
         sheepTotal = ScoreCounter.sheepCount * sheepMult;
-        sheepFinal.text = "" + sheepTotal;
+        sheepNum.text = "" + ScoreCounter.sheepCount + " x " + sheepMult;
+        sheepFinal.text = "= " + sheepTotal;
 
         totalScore = snoozeTotal + ScoreCounter.distanceCount; /*+sheepTotal*/
         finalScore.text = "" + totalScore;
@@ -50,6 +53,7 @@ public class ScoreMenu : MonoBehaviour
     }
     public void RetryButton()
     {
+        gameOver = false;
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         print("RestartGame");
@@ -57,6 +61,7 @@ public class ScoreMenu : MonoBehaviour
 
     public void QuitToMenu()
      {
+        gameOver = false;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Start Menu");
         print("Back to Menu");
      }

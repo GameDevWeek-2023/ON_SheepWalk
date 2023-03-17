@@ -8,28 +8,33 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     public bool isPaused;
+    public GameObject scoreMenu;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!ScoreMenu.gameOver)
         {
-            if (GameIsPaused == true)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                print("Resume");
-                Resume();
-                isPaused = false;
-                //FindObjectOfType<AudioManager>().Play("Select");
-            }
+                if (GameIsPaused == true)
+                {
+                    print("Resume");
+                    Resume();
+                    isPaused = false;
+                    //FindObjectOfType<AudioManager>().Play("Select");
+                }
 
-            else
-            {
-                print("Paused");
-                Pause();
-                isPaused = true;
-                //FindObjectOfType<AudioManager>().Play("Select");
+                else
+                {
+                    print("Paused");
+                    Pause();
+                    isPaused = true;
+                    //FindObjectOfType<AudioManager>().Play("Select");
+                }
             }
         }
+        
     }
 
     public void Resume()

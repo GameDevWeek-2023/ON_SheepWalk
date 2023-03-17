@@ -36,7 +36,7 @@ public class StartMenu : MonoBehaviour
     {
         MainMenu.SetActive(false);
         ControlsPanel.SetActive(true);
-        ReturnControls.Select();
+        //ReturnControls.Select();
     }
 
     public void MainMenuButton()
@@ -44,7 +44,7 @@ public class StartMenu : MonoBehaviour
         // Show Main Menu
         MainMenu.SetActive(true);
         ControlsPanel.SetActive(false);
-        StartButton.Select();
+        //StartButton.Select();
     }
 
     public void QuitButton()

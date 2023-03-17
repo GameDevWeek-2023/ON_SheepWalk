@@ -30,6 +30,6 @@ public class ScoreCounter : MonoBehaviour
 
         sheepText.text = "Sheep " + sheepCount;
         if (player != null) distanceCount = Mathf.RoundToInt(player.transform.localPosition.x)*distMult;
-        distText.text = "Distance " + distanceCount;
+        distText.text = "" + distanceCount;
     }
 }
