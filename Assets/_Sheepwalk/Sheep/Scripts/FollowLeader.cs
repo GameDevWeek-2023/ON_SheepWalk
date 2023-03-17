@@ -28,25 +28,44 @@ public class FollowLeader : MonoBehaviour
         //_targetIndex = _leaderHistory.HistoryLength - 1 - Mathf.CeilToInt(_leaderHistory.FPSEstimate * optimalDistance/5);
 
         if (leaderHistory.PositionHistory.Count <= 0) return;
-        currentIndex -= 1;
-        //if (currentIndex < _targetIndex)
-        if (ShouldGetCloser(currentIndex))
+        if (leaderHistory.suggestSuicide)
         {
-            currentIndex++;
-            if (ShouldGetCloser(currentIndex)) currentIndex++;
-            //if (currentIndex < _targetIndex) currentIndex++;
-        }
-
-        currentIndex = Math.Min(Math.Max(1, currentIndex), leaderHistory.PositionHistory.Count-1);
-
-        if (leaderHistory.Distances[currentIndex] < optimalDistance)
-        {
-            transform.position = Vector3.Lerp(leaderHistory.PositionHistory[currentIndex-1], leaderHistory.PositionHistory[currentIndex], 
-                (optimalDistance-leaderHistory.Distances[currentIndex-1])/(leaderHistory.Distances[currentIndex]-leaderHistory.Distances[currentIndex-1] + 0.0001f));
+            if (currentIndex < leaderHistory.PositionHistory.Count - 1)
+            {
+                currentIndex++;
+                currentIndex = Math.Min(Math.Max(1, currentIndex), leaderHistory.PositionHistory.Count-1);
+                transform.position = leaderHistory.PositionHistory[currentIndex] + offset;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
         else
         {
-            transform.position = leaderHistory.PositionHistory[currentIndex] + offset;   
+            currentIndex -= 1;
+            //if (currentIndex < _targetIndex)
+            if (ShouldGetCloser(currentIndex))
+            {
+                currentIndex++;
+                if (ShouldGetCloser(currentIndex)) currentIndex++;
+                //if (currentIndex < _targetIndex) currentIndex++;
+            }
+
+
+            currentIndex = Math.Min(Math.Max(1, currentIndex), leaderHistory.PositionHistory.Count - 1);
+
+            if (leaderHistory.Distances[currentIndex] < optimalDistance)
+            {
+                transform.position = Vector3.Lerp(leaderHistory.PositionHistory[currentIndex - 1],
+                    leaderHistory.PositionHistory[currentIndex],
+                    (optimalDistance - leaderHistory.Distances[currentIndex - 1]) /
+                    (leaderHistory.Distances[currentIndex] - leaderHistory.Distances[currentIndex - 1] + 0.0001f));
+            }
+            else
+            {
+                transform.position = leaderHistory.PositionHistory[currentIndex] + offset;
+            }
         }
     }
 

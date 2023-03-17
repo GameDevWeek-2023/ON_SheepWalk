@@ -18,6 +18,7 @@ namespace sheepwalk
         private float _fpsEstimate = 20f;
         private const float FPSEstimateDecay = 0.99f;
         private const float Eps = (float)1e-6;
+        public bool suggestSuicide = false;
 
         public int HistoryLength
         {
@@ -57,7 +58,8 @@ namespace sheepwalk
             _fpsEstimate = FPSEstimateDecay * _fpsEstimate + (1 - FPSEstimateDecay) / (Time.deltaTime + Eps);
             //if (target == null) return;
             //PositionHistory.Add(target.position);
-            
+            if (target != null) return;
+            suggestSuicide = true;
         }
     }
 }

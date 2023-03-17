@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18073727, g: 0.22175726, b: 0.2811201, a: 1}
+  m_IndirectSpecularColor: {r: 0.18073687, g: 0.22175667, b: 0.2811191, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: -20
   runSpeed: 6
-  jumpHeight: 3
+  jumpHeight: 4
   groundLayers:
     serializedVersion: 2
     m_Bits: 192
@@ -664,11 +664,11 @@ MonoBehaviour:
   wallChecks:
   - {fileID: 1666950530}
   deathHandler: {fileID: 217600073}
-  speedIncreasePerSecond: 0.01
+  speedIncreasePerSecond: 0.05
   _leaderPositionHistory: {fileID: 1247114233}
-  dashDistance: 3
+  dashDistance: 5
   dashCD: 1
-  dashSpeedFactor: 3
+  dashSpeedFactor: 4
   velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &665620985
 CharacterController:
@@ -1309,15 +1309,16 @@ MonoBehaviour:
   depth: 0
   height: 0
   generatorState: 0
-  initialOffset: -20
+  initialOffset: -5
   _referenceCamera: {fileID: 963194227}
   prefabs:
-  - {fileID: 1808747720602336516, guid: 932f21180a7ff9c48aa68bc554c87a4c, type: 3}
-  - {fileID: 6334461511286221684, guid: cddf73afacff957479db9e47326e283f, type: 3}
-  - {fileID: 584992864014650127, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
+  - {fileID: 23986863905208328, guid: 918bf73b515968c4ea9fa30f093e7614, type: 3}
+  - {fileID: 2009363401017089713, guid: 335d4ab2df2f57c49a549059c7b6d84a, type: 3}
+  - {fileID: 4892882341073787305, guid: a6384ce9cd7ca404cad55f32e2243778, type: 3}
   - {fileID: 1808747720602336516, guid: 347acc239fb7f294688746360eb371a1, type: 3}
-  - {fileID: 1808747720602336516, guid: a8f8f3948c6d403469587bfb474abebe, type: 3}
+  - {fileID: 4127205207889072937, guid: c00ae25ec2d91ea4194b45682d0433fa, type: 3}
   closenessThreshold: 0.2
+  standardGap: 2
 --- !u!1 &1666950529
 GameObject:
   m_ObjectHideFlags: 0

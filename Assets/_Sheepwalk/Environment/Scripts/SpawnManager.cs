@@ -18,6 +18,7 @@ namespace sheepwalk
         [SerializeField] private Camera _referenceCamera;
         [SerializeField] private List<GameObject> prefabs;
         [SerializeField] private float closenessThreshold = 0.2f;
+        [SerializeField] private float standardGap = 1.5f;
 
         private Dictionary<int, List<NodeTransition>> transitiongraph;
         private float _xOffset;
@@ -102,9 +103,11 @@ namespace sheepwalk
                 //Debug.Log(bounds);
                 newSection.transform.Translate(-bounds.min.x, 0, 0);
                 _xOffset += bounds.size.x;
+                _xOffset += standardGap;
                 // Is this centered or dependent on pivot?
                 var destroyComponent = newSection.AddComponent<DestroyOutOfView>();
-                destroyComponent.Initialize(new Vector3(newSection.transform.position.x - bounds.min.x, height, depth), _referenceCamera, closenessThreshold);
+                //- bounds.center.x
+                destroyComponent.Initialize(new Vector3(newSection.transform.position.x  + 2*bounds.extents.x, height, depth), _referenceCamera, closenessThreshold);
                     
             }
         }
