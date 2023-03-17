@@ -37,14 +37,16 @@ namespace sheepwalk
 
         public Transform Pawn
         {
-            get { return _pawn; }
+            get => _pawn;
             set
             {
                 _pawn = value;
-                var tags = GetComponent<CustomTags>();
+                var tags = value.GetComponent<CustomTags>();
                 if (tags != null) _mayDash = tags.HasTag("canDash");
             }
-        } 
+        }
+
+        public bool IsDashing => _remainingDashDistance > 0;
 
         // Start is called before the first frame update
         void Start()
@@ -60,10 +62,7 @@ namespace sheepwalk
                     Pawn = child.transform;
                     break;
                 }
-                
             }
-
-
         }
 
         // Update is called once per frame
@@ -128,18 +127,16 @@ namespace sheepwalk
                 _hasHitObstacle = true;
                 break;
             }
-
-
+            
             // can check for tags of hit? OverlapSphere -> Collider -> Gameobject -> CustomTags
             // not needed?
             _leaderPositionHistory.Add(_pawn.position);
 
-            if (_hasHitObstacle)
+            if (!IsDashing && _hasHitObstacle)
             {
                 Die();
                 //Debug.Log("Hit obstacle. Should apply penalty");
             }
-            
         }
 
         private void Die()

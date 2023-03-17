@@ -1408,7 +1408,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
+  m_Height: 0
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -3366,11 +3366,11 @@ MonoBehaviour:
   initialOffset: -20
   _referenceCamera: {fileID: 963194227}
   prefabs:
-  - {fileID: 3694317119429100845, guid: 90f52d0ce084f0b4bb6b5f8b933780d5, type: 3}
+  - {fileID: 1808747720602336516, guid: 932f21180a7ff9c48aa68bc554c87a4c, type: 3}
   - {fileID: 6334461511286221684, guid: cddf73afacff957479db9e47326e283f, type: 3}
   - {fileID: 584992864014650127, guid: 7a1d3f38d3330e44dab2471695fc8401, type: 3}
   - {fileID: 1808747720602336516, guid: 347acc239fb7f294688746360eb371a1, type: 3}
-  - {fileID: 1808747720602336516, guid: 347acc239fb7f294688746360eb371a1, type: 3}
+  - {fileID: 1808747720602336516, guid: a8f8f3948c6d403469587bfb474abebe, type: 3}
   closenessThreshold: 0.2
 --- !u!1 &1465967962
 GameObject:
@@ -4319,7 +4319,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666950529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.63, y: 0.66, z: 0}
+  m_LocalPosition: {x: 0.67, y: 0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5280,7 +5280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108972804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0.4, y: -0.045, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
