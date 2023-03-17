@@ -21,8 +21,8 @@ namespace sheepwalk
 
         private float _hitCheckPrecision = 0.1f;
         private float _horizontalInput = 1f;
-        private CharacterController _characterController;
-        private Vector3 _velocity;
+        private CharacterController _characterController; 
+        public Vector3 velocity;
         private bool _isGrounded;
         private bool _hasHitObstacle;
 
@@ -49,7 +49,7 @@ namespace sheepwalk
         {
             runSpeed += speedIncreasePerSecond * Time.deltaTime;
             // Base Forward Movement
-            _velocity.x = _horizontalInput * runSpeed;
+            velocity.x = _horizontalInput * runSpeed;
             
             _isGrounded = false;
             foreach (var groundObject in groundChecks.Where(groundObject => Physics.CheckSphere(groundObject.position, _hitCheckPrecision, groundLayers, QueryTriggerInteraction.Ignore)))
@@ -58,23 +58,23 @@ namespace sheepwalk
                 break;
             }
             
-            if (_isGrounded && _velocity.y < 0)
+            if (_isGrounded && velocity.y < 0)
             {
                 //Debug.Log("Ground reached");
-                _velocity.y = 0;
+                velocity.y = 0;
             }
             else
             {
-                _velocity.y += gravity * Time.deltaTime;    
+                velocity.y += gravity * Time.deltaTime;    
             }
 
             if (_isGrounded && Input.GetButtonDown("Jump"))
             {
                 //Debug.Log("Jump");
-                _velocity.y += -Mathf.Sign(gravity) * Mathf.Sqrt(Mathf.Abs(jumpHeight * 2 * gravity));
+                Jump(jumpHeight);
             }
 
-            _characterController.Move(_velocity * Time.deltaTime);
+            _characterController.Move(velocity * Time.deltaTime);
             
             //Check for obstacle hit
             _hasHitObstacle = false;
@@ -104,5 +104,10 @@ namespace sheepwalk
             
             Destroy(this);
         }
+
+        public void Jump(float height)
+        {
+            velocity.y += -Mathf.Sign(gravity) * Mathf.Sqrt(Mathf.Abs(height * 2 * gravity));
+        } 
     }
 }

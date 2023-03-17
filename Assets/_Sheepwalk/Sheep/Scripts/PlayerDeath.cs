@@ -8,11 +8,11 @@ namespace sheepwalk
 
     public class PlayerDeath : MonoBehaviour
     {
-        public GameObject scoreMenu;
+        public ScoreMenu scoreMenu;
         public void HandlePlayerDeath()
         {
             //Endgame screen
-            scoreMenu.GetComponent<ScoreMenu>().DisplayScore();   
+            if (scoreMenu != null) scoreMenu.DisplayScore();
             //Respawn
             //Should probably lie on some respawn button
             StartCoroutine(nameof(RespawnCoroutine));
