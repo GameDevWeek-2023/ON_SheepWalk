@@ -55,8 +55,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds:
-    m_Center: {x: 19.000002, y: 4.8287964, z: 0}
-    m_Extent: {x: 21.379906, y: 5.8292236, z: 1.1316192}
+    m_Center: {x: 19.000002, y: 4.8287964, z: -0.015105724}
+    m_Extent: {x: 21.379906, y: 5.8292236, z: 1.3010526}
 --- !u!1001 &1212689736653824864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8393429495931319227, guid: fe568f2f9a0f5734288cf9992f1e3c50, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.57
+      value: 7.577
       objectReference: {fileID: 0}
     - target: {fileID: 8393429495931319227, guid: fe568f2f9a0f5734288cf9992f1e3c50, type: 3}
       propertyPath: m_LocalPosition.z
