@@ -629,7 +629,7 @@ MonoBehaviour:
   deathHandler: {fileID: 217600073}
   speedIncreasePerSecond: 0.1
   _leaderPositionHistory: {fileID: 1247114233}
-  minJumpActDuration: 0.05
+  minJumpActDuration: 0.025
   maxJumpActDuration: 0.3
   dashDistance: 5
   dashCD: 1

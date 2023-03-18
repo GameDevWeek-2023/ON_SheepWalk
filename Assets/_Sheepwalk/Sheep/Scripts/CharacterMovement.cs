@@ -144,6 +144,7 @@ namespace sheepwalk
 
             if (_mayDash && _canDash && Input.GetButtonDown("Dash"))
             {
+                SheepAnimator.SetTrigger("isDashing");
                 _remainingDashDistance = dashDistance;
                 _canDash = false;
                 _remainingDashCD = dashCD;
@@ -184,8 +185,6 @@ namespace sheepwalk
                 Die();
                 //Debug.Log("Hit obstacle. Should apply penalty");
             }
-
-            
         }
 
         private void Die()
@@ -200,7 +199,7 @@ namespace sheepwalk
 
         public void Jump(float height)
         {
-            //Need it linear
+            // Todo: Scale Jumpheight inversely prop to movement speed? -> not really viable for height changes
             velocity.y += -FullSqrt(height * 2 * gravity);
             if(SheepAnimator != null) SheepAnimator.SetTrigger("isJumping");
         }
