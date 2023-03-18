@@ -156,6 +156,7 @@ namespace sheepwalk
 
             if (_mayDash && _canDash && Input.GetButtonDown("Dash"))
             {
+                AudioManager.instance.Play("Dash");
                 if(SheepAnimator != null) SheepAnimator.SetTrigger("isDashing");
                 _remainingDashDistance = dashDistance;
                 _canDash = false;
