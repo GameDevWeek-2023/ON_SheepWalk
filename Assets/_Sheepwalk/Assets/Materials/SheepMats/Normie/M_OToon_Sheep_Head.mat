@@ -20,10 +20,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_OToon_Sheep
+  m_Name: M_OToon_Sheep_Head
   m_Shader: {fileID: 4800000, guid: e88aeddd2ef1f934d805981244872e27, type: 3}
   m_ValidKeywords:
   - _HALFTONESHAPE_DOT
+  - _OUTLINE
   - _RIMLIGHTING_ON
   m_InvalidKeywords:
   - _HAFTONESHAPES_DOT
@@ -39,7 +40,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a3fa8cb95a7cacf4aa86d7109c7a0845, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -91,7 +92,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a3fa8cb95a7cacf4aa86d7109c7a0845, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -199,9 +200,9 @@ Material:
     - _NoiseScale: 1
     - _NoiseStrength: 0.1
     - _OcclusionStrength: 1
-    - _OutlineEnabled: 0
+    - _OutlineEnabled: 1
     - _OutlineMode: 0
-    - _OutlineWidth: 2.95
+    - _OutlineWidth: 3.68
     - _OverrideShadowColor: 0
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -254,8 +255,8 @@ Material:
     - _HalftoneColor: {r: 0.4433962, g: 0, b: 0, a: 1}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingScale: {r: 15, g: 1, b: 0, a: 0}
-    - _OutlineColor: {r: 1, g: 0.033018887, b: 0.033018887, a: 1}
-    - _OutlineDistancFade: {r: 25.57471, g: 100.57471, b: 0, a: 0}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineDistancFade: {r: -200, g: 83.51648, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0.898}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

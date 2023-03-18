@@ -67,10 +67,30 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6547223059409353530, guid: 94982a155f9488041a5b40435d831b62, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c2ae7a694d6b03d41b62b474d073be8a, type: 2}
+    - target: {fileID: -4396642182433536433, guid: 94982a155f9488041a5b40435d831b62, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 57afc2b114b6bc040abeabcc22eb40ce, type: 2}
+    - target: {fileID: -4396642182433536433, guid: 94982a155f9488041a5b40435d831b62, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 257493c35d68eeb42afa8a2f22b746cd, type: 2}
     - target: {fileID: 919132149155446097, guid: 94982a155f9488041a5b40435d831b62, type: 3}
       propertyPath: m_Name
       value: Rammy_walk
       objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 94982a155f9488041a5b40435d831b62, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44542b28934a64f4e9870935e906733b, type: 2}
+    - target: {fileID: 8417361359673230750, guid: 94982a155f9488041a5b40435d831b62, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf59b6531e50e1e4e9a08178f6fe79c6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94982a155f9488041a5b40435d831b62, type: 3}
 --- !u!1 &2357438141989373666 stripped
