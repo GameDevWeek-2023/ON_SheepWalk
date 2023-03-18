@@ -1380,6 +1380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 2093793796144076573, guid: f4ad907109ab4c247ac4e10793a6610c, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 1114878548}
     - target: {fileID: 2093793796144076574, guid: f4ad907109ab4c247ac4e10793a6610c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1530,7 +1534,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4031687539617235483, guid: f10c8a21631475e45b192168cada8a2d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 95888e0ce01422b48972913317f07b64, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1742,7 +1746,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Hit
     clip: {fileID: 8300000, guid: 5141cd83508d30f46afbcbf0e6cb9f6f, type: 3}
-    volume: 0.308
+    volume: 0.12
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -2130,7 +2134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   depth: 0
   height: 0
-  standardGap: 1.5
+  standardGap: 5
   scale: 1
   generatorState: -1
   initialOffset: -1

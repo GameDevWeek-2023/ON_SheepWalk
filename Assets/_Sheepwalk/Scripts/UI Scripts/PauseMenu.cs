@@ -9,6 +9,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public bool isPaused;
 
+    // Change Volume during Pause
+    public AudioSource musicSource;
+    [SerializeField] private float pauseVolumeFactor = 0.5f;
+    private float _normalVolume = -1f;
+
     // Update is called once per frame
     void Update()
     {
@@ -33,7 +38,6 @@ public class PauseMenu : MonoBehaviour
                 }
             }
         }
-        
     }
 
     public void Resume()
@@ -42,6 +46,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         isPaused = false;
+        if (_normalVolume >= 0) musicSource.volume = _normalVolume;
+        
     }
 
     void Pause()
@@ -50,6 +56,10 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         isPaused = true;
+        
+        // Assume can't be started twice
+        _normalVolume = musicSource.volume;
+        musicSource.volume = _normalVolume * pauseVolumeFactor;
     }
 
     public void LoadOptions()

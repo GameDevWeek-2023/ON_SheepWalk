@@ -88,7 +88,9 @@ namespace sheepwalk
                 currentPos += step;
                 positionHistory.Add(currentPos);
             }
+            // Todo: Find out why sometimes very high
             Debug.Log("Added "+numberFrames+" PseudoPositions");
+            
             
             //add new pawn reference to movement Controller
             charMovement.Pawn = refTransform;
