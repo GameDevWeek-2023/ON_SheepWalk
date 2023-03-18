@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.33798647, g: 0.3003649, b: 0.40869042, a: 1}
+  m_IndirectSpecularColor: {r: 0.33766088, g: 0.30007273, b: 0.4083761, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -468,6 +468,8 @@ MonoBehaviour:
   deathHandler: {fileID: 1552832632}
   speedIncreasePerSecond: 0.01
   _leaderPositionHistory: {fileID: 1895008816}
+  minJumpActDuration: 0.1
+  maxJumpActDuration: 0.3
   dashDistance: 3
   dashCD: 1
   dashSpeedFactor: 3

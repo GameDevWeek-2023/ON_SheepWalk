@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18073727, g: 0.22175726, b: 0.2811201, a: 1}
+  m_IndirectSpecularColor: {r: 0.18073687, g: 0.22175667, b: 0.2811191, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -840,9 +840,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b689d4caae623e4baef043f718ff51c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -20
+  gravity: -30
   runSpeed: 8
-  jumpHeight: 4
+  jumpHeight: 2.5
   groundLayers:
     serializedVersion: 2
     m_Bits: 192
@@ -857,6 +857,8 @@ MonoBehaviour:
   deathHandler: {fileID: 217600073}
   speedIncreasePerSecond: 0.1
   _leaderPositionHistory: {fileID: 1247114233}
+  minJumpActDuration: 0.025
+  maxJumpActDuration: 0.2
   dashDistance: 5
   dashCD: 1
   dashSpeedFactor: 4

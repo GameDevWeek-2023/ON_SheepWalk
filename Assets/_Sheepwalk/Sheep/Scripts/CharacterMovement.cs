@@ -19,9 +19,25 @@ namespace sheepwalk
         [SerializeField] private PlayerDeath deathHandler;
         [SerializeField] private float speedIncreasePerSecond = 0.05f;
         [SerializeField] private LeaderPositionHistory _leaderPositionHistory;
+        
+        // Activation Duration (short vs long jump)
+        [SerializeField] private float minJumpActDuration = 0.1f;
+        [SerializeField] private float maxJumpActDuration = 0.5f;
+        //[SerializeField] private float minJumpHeightFactor = 0.3f;
+        //[SerializeField] private float maxJumpHeightFactor = 1f;
+
+        // Dash Parameters (only applicable if may dash)
         [SerializeField] private float dashDistance = 3f;
         [SerializeField] private float dashCD = 1f;
         [SerializeField] private float dashSpeedFactor = 3f;
+        
+        //Jump private params
+        private bool _inJumpActivation = false;
+        private float _jumpActivationDuration = 0f;
+        // more like sqrt prev jump height
+        private float _previousJumpHeight = 0f;
+        
+        //Dash private Params
         private bool _mayDash = false;
         private bool _canDash = false;
         private float _remainingDashDistance = 0f;
@@ -93,10 +109,30 @@ namespace sheepwalk
                 velocity.y += gravity * Time.deltaTime;    
             }
 
-            if (_isGrounded && Input.GetButtonDown("Jump"))
+            if (_isGrounded && !_inJumpActivation && Input.GetButtonDown("Jump"))
             {
-                //Debug.Log("Jump");
-                Jump(jumpHeight);
+                _jumpActivationDuration = 0f;
+                _previousJumpHeight = 0f;
+                _inJumpActivation = true;
+            }
+
+            if (_inJumpActivation)
+            {
+                _jumpActivationDuration += Time.deltaTime;
+                float jumpFactor;
+                if (_jumpActivationDuration >= maxJumpActDuration || Input.GetButtonUp("Jump"))
+                {
+                    //Add rest
+                    jumpFactor = Mathf.Lerp(0, 1f,
+                        Mathf.Max(Time.deltaTime - Mathf.Max(0f, _jumpActivationDuration - maxJumpActDuration), minJumpActDuration - _jumpActivationDuration) / maxJumpActDuration);
+                    _inJumpActivation = false;
+                }
+                else
+                {
+                    jumpFactor = Mathf.Lerp(0f, 1f, Time.deltaTime / maxJumpActDuration);
+                    
+                }
+                _previousJumpHeight = IncJump(jumpHeight * jumpFactor, _previousJumpHeight);
             }
 
             if (_mayDash && _canDash && Input.GetButtonDown("Dash"))
@@ -156,8 +192,23 @@ namespace sheepwalk
 
         public void Jump(float height)
         {
-            normieAnim.SetTrigger("isJumping");
-            velocity.y += -Mathf.Sign(gravity) * Mathf.Sqrt(Mathf.Abs(height * 2 * gravity));
-        } 
+            //Need it linear
+            velocity.y += -FullSqrt(height * 2 * gravity);
+            
+            //velocity.y += - height * gravity;
+        }
+        
+        public float IncJump(float additionalHeight, float previousFactor)
+        {
+            var c = FullSqrt(2 * gravity);
+            var newFactor = (FullSqrt(additionalHeight + Mathf.Pow(previousFactor, 2f)) - previousFactor);
+            velocity.y += -c * newFactor;
+            return newFactor;
+        }
+
+        private float FullSqrt(float number)
+        {
+            return Mathf.Sign(number) * Mathf.Sqrt(Math.Abs(number));
+        }
     }
 }
