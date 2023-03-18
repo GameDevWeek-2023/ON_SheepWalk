@@ -216,7 +216,8 @@ namespace sheepwalk
 
             //play some animation?
             if(SheepAnimator != null) {SheepAnimator.SetTrigger("knockedOut");}
-            //todo: wait?
+
+            _active = false;
             
             StartCoroutine(nameof(DestroyOnDelay), 1f);
 

@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 848027961064411350, guid: f12ffe9a9fe6fe24284237d8b6620429, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 848027961064411351, guid: f12ffe9a9fe6fe24284237d8b6620429, type: 3}
       propertyPath: m_Name
       value: CollectableRammy
@@ -169,6 +173,10 @@ PrefabInstance:
     - target: {fileID: 5301281388783679347, guid: f12ffe9a9fe6fe24284237d8b6620429, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7323665780488694845, guid: f12ffe9a9fe6fe24284237d8b6620429, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f12ffe9a9fe6fe24284237d8b6620429, type: 3}

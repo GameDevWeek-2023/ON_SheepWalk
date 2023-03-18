@@ -36,10 +36,10 @@ public class DeathZoneFollow : MonoBehaviour
         }
         else if (tags.HasTag("player"))
         {
-            Destroy(other.gameObject);
             // kill player -> new component
             var deathComponent = gameObject.GetComponent<sheepwalk.PlayerDeath>();
             deathComponent.HandlePlayerDeath();
+            Destroy(other.gameObject);
         }
         
     }
