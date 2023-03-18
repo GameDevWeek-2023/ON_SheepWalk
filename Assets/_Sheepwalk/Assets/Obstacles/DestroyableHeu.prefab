@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 248649823015218623}
-  - component: {fileID: 4864559816848430936}
-  - component: {fileID: 6589650458129913042}
-  - component: {fileID: 5628150446052041358}
   m_Layer: 0
   m_Name: DestroyableHeu
   m_TagString: Untagged
@@ -27,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592418096845256453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0028267503, y: 6.878112, z: -0.0008520484}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35,44 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4864559816848430936
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592418096845256453}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.2406756, y: 0.85093504, z: 0.91762257}
-  m_Center: {x: 0.1574282, y: 0.07453251, z: -0.041188717}
---- !u!65 &6589650458129913042
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592418096845256453}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.80417955, y: 0.7494313, z: 0.90863305}
-  m_Center: {x: -0.053336874, y: 0.013691723, z: -0.045683473}
---- !u!114 &5628150446052041358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592418096845256453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8479fb30d0c78fa45858074ffdc05f24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2640038317446207720
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,6 +41,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 378230085915014283}
+  - component: {fileID: 8115461465842436625}
+  - component: {fileID: 5294008690370196387}
+  - component: {fileID: 3444431352526129055}
   m_Layer: 7
   m_Name: Heu
   m_TagString: Untagged
@@ -106,6 +68,44 @@ Transform:
   m_Father: {fileID: 248649823015218623}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8115461465842436625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640038317446207720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9219063, y: 1.2221736, z: 0.84410137}
+  m_Center: {x: -0.0019567013, y: -0.111086786, z: -0.038888276}
+--- !u!65 &5294008690370196387
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640038317446207720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8951596, y: 0.75848716, z: 0.82398313}
+  m_Center: {x: -0.0078468025, y: 0.009163797, z: -0.03768736}
+--- !u!114 &3444431352526129055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640038317446207720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8479fb30d0c78fa45858074ffdc05f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2826690656244852748
 GameObject:
   m_ObjectHideFlags: 0

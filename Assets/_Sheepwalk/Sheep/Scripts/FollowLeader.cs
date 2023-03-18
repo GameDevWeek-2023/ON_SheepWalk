@@ -17,7 +17,7 @@ public class FollowLeader : MonoBehaviour
         if (leaderHistory != null)
         {
             this.leaderHistory = leaderHistory;
-            offset = transform.position - this.leaderHistory.target.transform.position;
+            offset = transform.position - leaderHistory.target.transform.position;
             offset.x = 0;
         }
     }
