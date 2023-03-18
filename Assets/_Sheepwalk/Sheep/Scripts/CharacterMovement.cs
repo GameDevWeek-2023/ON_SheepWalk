@@ -57,6 +57,7 @@ namespace sheepwalk
         private float _xProgress = 0f;
         private float _stuckDetectionThreshold = 2f;
         private float _stuckTimer = 0f;
+        private float _eps = (float)1e-4;
         
 
         public Transform Pawn
@@ -131,6 +132,7 @@ namespace sheepwalk
                 _jumpActivationDuration = 0f;
                 _previousJumpHeight = 0f;
                 _inJumpActivation = true;
+                AudioManager.instance.Play("Jump_2");
             }
 
             if (_inJumpActivation)
@@ -192,11 +194,12 @@ namespace sheepwalk
 
             if (!IsDashing && _hasHitObstacle)
             {
+                AudioManager.instance.Play("Hit");
                 Die();
                 //Debug.Log("Hit obstacle. Should apply penalty");
             }
 
-            if (transform.position.x < _xProgress)
+            if (transform.position.x <= _xProgress+_eps)
             {
                 _stuckTimer += Time.deltaTime;
                 if (_stuckTimer >= _stuckDetectionThreshold)

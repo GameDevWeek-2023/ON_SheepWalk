@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8479fb30d0c78fa45858074ffdc05f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioName: Heu_Dash
 --- !u!1 &2826690656244852748
 GameObject:
   m_ObjectHideFlags: 0

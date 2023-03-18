@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class DeleteOnRam : MonoBehaviour
 {
+    [SerializeField] private string audioName;
     private void OnTriggerEnter(Collider other)
     {
         var characterMovement = other.gameObject.GetComponent<CharacterMovement>();
@@ -15,6 +16,7 @@ public class DeleteOnRam : MonoBehaviour
         if (characterMovement.IsDashing)
         {
             Debug.Log("Should Destroy");
+            if(audioName != null) AudioManager.instance.Play(audioName);
             Destroy(gameObject);
         }
     }

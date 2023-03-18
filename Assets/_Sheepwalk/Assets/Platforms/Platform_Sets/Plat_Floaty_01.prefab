@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4184574695247453265}
+  - component: {fileID: 8166672657901649670}
   m_Layer: 0
   m_Name: Plat_Floaty_01
   m_TagString: Untagged
@@ -36,6 +37,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8166672657901649670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8058517166032433897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c30fc2e3b38ff74ea190f5f6d3f33c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds:
+    m_Center: {x: 14.710001, y: 5.4437966, z: 0}
+    m_Extent: {x: 21.089905, y: 6.264224, z: 1.1316192}
 --- !u!1001 &1291031932950445739
 PrefabInstance:
   m_ObjectHideFlags: 0

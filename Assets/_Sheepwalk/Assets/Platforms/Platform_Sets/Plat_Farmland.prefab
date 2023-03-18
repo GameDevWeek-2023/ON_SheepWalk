@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8552495027689279525}
+  - component: {fileID: 2726191442911305654}
   m_Layer: 0
   m_Name: Plat_Farmland
   m_TagString: Untagged
@@ -49,6 +50,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2726191442911305654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972469155708349111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c30fc2e3b38ff74ea190f5f6d3f33c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds:
+    m_Center: {x: 33.159996, y: 6.7887964, z: -0.14280796}
+    m_Extent: {x: 43.5399, y: 10.079224, z: 1.3010526}
 --- !u!1001 &44777096131298021
 PrefabInstance:
   m_ObjectHideFlags: 0

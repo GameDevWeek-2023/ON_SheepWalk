@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe040ffa39e6fd4a983b811da6d1688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioName: beep_2
 --- !u!1001 &3064821000233377184
 PrefabInstance:
   m_ObjectHideFlags: 0

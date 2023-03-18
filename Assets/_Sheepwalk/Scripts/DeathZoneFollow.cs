@@ -39,6 +39,7 @@ public class DeathZoneFollow : MonoBehaviour
             // kill player -> new component
             var deathComponent = gameObject.GetComponent<sheepwalk.PlayerDeath>();
             deathComponent.HandlePlayerDeath();
+            AudioManager.instance.Play("beep_Fall_1");
             Destroy(other.gameObject);
         }
         

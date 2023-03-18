@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8479fb30d0c78fa45858074ffdc05f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioName: Hit
 --- !u!65 &3733761488098355996
 BoxCollider:
   m_ObjectHideFlags: 0

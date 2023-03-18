@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4278693497926501754}
+  - component: {fileID: 996969431827187676}
   m_Layer: 0
   m_Name: Plat_Rammy_01
   m_TagString: Untagged
@@ -42,6 +43,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &996969431827187676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849831720881923441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c30fc2e3b38ff74ea190f5f6d3f33c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds:
+    m_Center: {x: 8.5, y: 2.3659477, z: -0.17125344}
+    m_Extent: {x: 18.879904, y: 3.366375, z: 1.3028727}
 --- !u!1001 &1673519925920523440
 PrefabInstance:
   m_ObjectHideFlags: 0

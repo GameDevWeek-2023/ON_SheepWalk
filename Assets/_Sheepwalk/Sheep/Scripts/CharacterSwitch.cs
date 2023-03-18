@@ -93,7 +93,7 @@ namespace sheepwalk
             //add new pawn reference to movement Controller
             charMovement.Pawn = refTransform;
             PushBackHerdCurrentIndices(numberFrames);
-            Debug.Log(positionHistory.Distances[^(numberFrames + 2)]);
+            //Debug.Log(positionHistory.Distances[^(numberFrames + 2)]);
         }
 
         public void SwitchPawn(Transform other)

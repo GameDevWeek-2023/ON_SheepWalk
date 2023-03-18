@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8479fb30d0c78fa45858074ffdc05f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioName: Zaun_Dash
 --- !u!65 &5651801627336809431
 BoxCollider:
   m_ObjectHideFlags: 0

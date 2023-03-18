@@ -46,6 +46,7 @@ public class BouncePlatform : MonoBehaviour
         else
         {
             _characterMovement.Jump(2*_characterMovement.jumpHeight);
+            AudioManager.instance.Play("Bounce");
             _active = false;
         }
         _yScaleFactor= _originalScale.y * Mathf.Lerp(_minYScaleFactor, 1f, Mathf.Abs(_animationTime) / animationDuration);
