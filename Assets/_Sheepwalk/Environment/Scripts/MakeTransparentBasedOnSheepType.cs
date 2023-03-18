@@ -40,7 +40,7 @@ public class MakeTransparentBasedOnSheepType : MonoBehaviour
             return;
         }
         var tags = player.Pawn.GetComponent<CustomTags>();
-        Debug.Log("Found Pawn Tags for transparency");
+        //Debug.Log("Found Pawn Tags for transparency");
         // 0 or 1?
         if (tags.HasTag(tagForVisible)) SetTransparency(1f);
         else SetTransparency(transparencyValue);
