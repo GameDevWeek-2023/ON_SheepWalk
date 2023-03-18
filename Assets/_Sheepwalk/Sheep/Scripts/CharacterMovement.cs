@@ -144,7 +144,7 @@ namespace sheepwalk
 
             if (_mayDash && _canDash && Input.GetButtonDown("Dash"))
             {
-                SheepAnimator.SetTrigger("isDashing");
+                if(SheepAnimator != null) SheepAnimator.SetTrigger("isDashing");
                 _remainingDashDistance = dashDistance;
                 _canDash = false;
                 _remainingDashCD = dashCD;
