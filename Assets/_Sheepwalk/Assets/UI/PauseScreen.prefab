@@ -31,7 +31,7 @@ RectTransform:
   - {fileID: 2093793795869848131}
   - {fileID: 2093793795231754831}
   m_Father: {fileID: 2093793797166351922}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -322,8 +322,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -613.00006, y: -430}
-  m_SizeDelta: {x: -1760, y: -1050}
+  m_AnchoredPosition: {x: -598.00006, y: -430}
+  m_SizeDelta: {x: -1823.05, y: -1050}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2093793795852660691
 CanvasRenderer:
@@ -444,9 +444,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.8920204, b: 0.7490196, a: 1}
-    m_PressedColor: {r: 0.7924528, g: 0.58746326, b: 0.39248842, a: 1}
-    m_SelectedColor: {r: 0.79215693, g: 0.5882353, b: 0.3921569, a: 1}
+    m_HighlightedColor: {r: 0.6651896, g: 0.40610537, b: 0.735849, a: 1}
+    m_PressedColor: {r: 0.4082308, g: 0.366901, b: 0.9150943, a: 1}
+    m_SelectedColor: {r: 0.40784314, g: 0.36862746, b: 0.9137255, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -488,6 +488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2093793795869848131}
   - component: {fileID: 2093793795869848130}
+  - component: {fileID: 685593992}
   m_Layer: 5
   m_Name: VolSlider
   m_TagString: Untagged
@@ -562,13 +563,38 @@ MonoBehaviour:
   m_FillRect: {fileID: 2093793796508925513}
   m_HandleRect: {fileID: 2093793796249888240}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 685593992}
+        m_TargetAssemblyTypeName: SetVolume, Assembly-CSharp
+        m_MethodName: SetLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &685593992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093793795869848124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9aef616b290362429fa53eaf80408bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: f10c8a21631475e45b192168cada8a2d, type: 2}
 --- !u!1 &2093793795872065675
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,6 +748,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 2093793797166351923}
   isPaused: 0
+  musicSource: {fileID: 0}
+  pauseVolumeFactor: 0.5
 --- !u!1 &2093793796249888241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,8 +1068,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2093793796492421911}
-  - {fileID: 2093793795230551989}
   - {fileID: 5136016275875146431}
+  - {fileID: 2093793795230551989}
   - {fileID: 2093793795852660685}
   m_Father: {fileID: 2093793796144076574}
   m_RootOrder: 0
@@ -1106,7 +1134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136016275811595946, guid: e92e307cfd3929e44a6a95ef256214db, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5136016275811595946, guid: e92e307cfd3929e44a6a95ef256214db, type: 3}
       propertyPath: m_AnchorMax.x
