@@ -51,10 +51,6 @@ namespace sheepwalk
         private bool _isGrounded;
         private bool _hasHitObstacle;
 
-        public Animator normieAnim;
-
-        public static bool sheepSwitch;
-
         public Transform Pawn
         {
             get => _pawn;
@@ -63,6 +59,15 @@ namespace sheepwalk
                 _pawn = value;
                 var tags = value.GetComponent<CustomTags>();
                 if (tags != null) _mayDash = tags.HasTag("canDash");
+            }
+        }
+
+        private Animator SheepAnimator
+        {
+            get
+            {
+                if (_pawn == null) return null;
+                return _pawn.GetComponentInChildren<Animator>();
             }
         }
 
@@ -98,7 +103,9 @@ namespace sheepwalk
                 _isGrounded = true;
                 break;
             }
-            
+
+            //if (_isGrounded) //stop jump anim?
+
             if (_isGrounded && velocity.y < 0)
             {
                 //Debug.Log("Ground reached");
@@ -186,7 +193,8 @@ namespace sheepwalk
             deathHandler.HandlePlayerDeath();
 
             //play some animation?
-            normieAnim.SetTrigger("knockedOut");
+            if(SheepAnimator != null) {SheepAnimator.SetTrigger("knockedOut");}
+            //todo: wait?
             Destroy(this);
         }
 
@@ -194,15 +202,18 @@ namespace sheepwalk
         {
             //Need it linear
             velocity.y += -FullSqrt(height * 2 * gravity);
-            
-            //velocity.y += - height * gravity;
+            if(SheepAnimator != null) SheepAnimator.SetTrigger("isJumping");
         }
         
         public float IncJump(float additionalHeight, float previousFactor)
         {
+            if (previousFactor == 0 && SheepAnimator != null)
+            {
+                SheepAnimator.SetTrigger("isJumping");
+            }
             var c = FullSqrt(2 * gravity);
-            var newFactor = (FullSqrt(additionalHeight + Mathf.Pow(previousFactor, 2f)) - previousFactor);
-            velocity.y += -c * newFactor;
+            var newFactor = FullSqrt(additionalHeight + Mathf.Sign(previousFactor)*Mathf.Pow(previousFactor, 2f));
+            velocity.y += -c * (newFactor - previousFactor);
             return newFactor;
         }
 
