@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3962874859397869122}
   - component: {fileID: 6150701969621660409}
   - component: {fileID: 6105352102095574591}
+  - component: {fileID: 4399948725583925855}
   m_Layer: 0
   m_Name: Cloud_Plat_Pref
   m_TagString: Untagged
@@ -53,7 +54,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584992864014650127}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -114,8 +115,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.4669037, y: 1.9990286, z: 1.3308859}
-  m_Center: {x: -0.033814907, y: 0.7332173, z: 0.11443472}
+  m_Size: {x: 4.4669037, y: 2.587842, z: 1.3308859}
+  m_Center: {x: -0.033814907, y: 0.43881062, z: 0.11443472}
 --- !u!114 &6150701969621660409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +143,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.382035, y: 1.6063268, z: 1.3308859}
   m_Center: {x: 0, y: 0.5368664, z: 0.11443472}
+--- !u!114 &4399948725583925855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584992864014650127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77167b55abcb92247a55cda36a2209f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateDelay: 1
+  tagForVisible: canBounce
+  transparentTexture: {fileID: 2800000, guid: 0dbe6acb9e1b07142b2ca14f1ea74830, type: 3}
+  fullyVisibleTexture: {fileID: 2800000, guid: 36194d6b7c267234d81a79e74d355530, type: 3}
 --- !u!1001 &7080188610982905927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -209,6 +226,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a42054a01fb77e545b9e8d6d805a3e60, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f08c2fa667530274f80c159c01213251, type: 2}
     - target: {fileID: 919132149155446097, guid: a42054a01fb77e545b9e8d6d805a3e60, type: 3}
       propertyPath: m_Name
       value: Plat_Cloud
