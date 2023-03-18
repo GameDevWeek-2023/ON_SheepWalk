@@ -2023,7 +2023,7 @@ MonoBehaviour:
   - currentNodeID: 3
     transition:
       adjacentNodeID: 6
-      weight: 1
+      weight: 0
   - currentNodeID: 3
     transition:
       adjacentNodeID: 7
@@ -2120,6 +2120,14 @@ MonoBehaviour:
     transition:
       adjacentNodeID: 7
       weight: 1
+  - currentNodeID: 4
+    transition:
+      adjacentNodeID: 5
+      weight: 1
+  - currentNodeID: 4
+    transition:
+      adjacentNodeID: 7
+      weight: 1
 --- !u!114 &1415892624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2137,7 +2145,7 @@ MonoBehaviour:
   standardGap: 5
   scale: 1
   generatorState: -1
-  initialOffset: -1
+  initialOffset: -2
   _referenceCamera: {fileID: 963194227}
   prefabs:
   - {fileID: 2009363401017089713, guid: 335d4ab2df2f57c49a549059c7b6d84a, type: 3}
