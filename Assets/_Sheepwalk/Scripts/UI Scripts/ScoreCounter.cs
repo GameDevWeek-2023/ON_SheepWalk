@@ -26,9 +26,9 @@ public class ScoreCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        snoozeText.text = "Zees " + snoozeCount;
+        snoozeText.text = "" + snoozeCount;
 
-        sheepText.text = "Sheep " + sheepCount;
+        sheepText.text = "" + sheepCount;
         if (player != null) distanceCount = Mathf.RoundToInt(player.transform.localPosition.x)*distMult;
         distText.text = "" + distanceCount;
     }
