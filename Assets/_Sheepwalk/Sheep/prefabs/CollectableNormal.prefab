@@ -87,6 +87,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalSheep
       objectReference: {fileID: 0}
+    - target: {fileID: 3252467306781364685, guid: 643a6846ebfae4c4887a63fb11aa0a3c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c1e74bddbc6417c40a41a906108f5bcf, type: 2}
+    - target: {fileID: 3252467306781364685, guid: 643a6846ebfae4c4887a63fb11aa0a3c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e6c351646ff72349bb046590f33cc32, type: 2}
+    - target: {fileID: 5403052515235435332, guid: 643a6846ebfae4c4887a63fb11aa0a3c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 61fd97d1db581df4a912265c2b8d51b5, type: 2}
     - target: {fileID: 5704527251558052253, guid: 643a6846ebfae4c4887a63fb11aa0a3c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -131,6 +143,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8753123631342389968, guid: 643a6846ebfae4c4887a63fb11aa0a3c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f26059ac140c5ec4285380441479db71, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 643a6846ebfae4c4887a63fb11aa0a3c, type: 3}
 --- !u!4 &7323665780488694845 stripped
