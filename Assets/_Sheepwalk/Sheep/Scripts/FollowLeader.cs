@@ -18,6 +18,7 @@ public class FollowLeader : MonoBehaviour
         {
             this.leaderHistory = leaderHistory;
             offset = transform.position - leaderHistory.target.transform.position;
+            // target can be unassigned
             offset.x = 0;
         }
     }

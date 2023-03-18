@@ -51,6 +51,14 @@ namespace sheepwalk
         private bool _isGrounded;
         private bool _hasHitObstacle;
 
+        private bool _active = true;
+        
+        //Stuck detection
+        private float _xProgress = 0f;
+        private float _stuckDetectionThreshold = 2f;
+        private float _stuckTimer = 0f;
+        
+
         public Transform Pawn
         {
             get => _pawn;
@@ -93,6 +101,7 @@ namespace sheepwalk
         // Update is called once per frame
         void Update()
         {
+            if (!_active) return;
             runSpeed += speedIncreasePerSecond * Time.deltaTime;
             // Base Forward Movement
             velocity.x = _horizontalInput * runSpeed;
@@ -104,7 +113,8 @@ namespace sheepwalk
                 break;
             }
 
-            //if (_isGrounded) //stop jump anim?
+            //stop jump animation
+            if (_isGrounded && SheepAnimator != null) SheepAnimator.SetTrigger("stopFalling"); 
 
             if (_isGrounded && velocity.y < 0)
             {
@@ -185,6 +195,19 @@ namespace sheepwalk
                 Die();
                 //Debug.Log("Hit obstacle. Should apply penalty");
             }
+
+            if (transform.position.x < _xProgress)
+            {
+                _stuckTimer += Time.deltaTime;
+                if (_stuckTimer >= _stuckDetectionThreshold)
+                {
+                    Die();
+                    return;
+                }
+            }
+            else _stuckTimer = 0f;
+
+            _xProgress = Mathf.Max(transform.position.x, _xProgress);
         }
 
         private void Die()
@@ -194,6 +217,14 @@ namespace sheepwalk
             //play some animation?
             if(SheepAnimator != null) {SheepAnimator.SetTrigger("knockedOut");}
             //todo: wait?
+            
+            StartCoroutine(nameof(DestroyOnDelay), 1f);
+
+        }
+
+        private IEnumerator DestroyOnDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
             Destroy(this);
         }
 
