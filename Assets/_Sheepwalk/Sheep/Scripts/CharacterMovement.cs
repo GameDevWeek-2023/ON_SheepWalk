@@ -35,6 +35,10 @@ namespace sheepwalk
         private bool _isGrounded;
         private bool _hasHitObstacle;
 
+        public Animator normieAnim;
+
+        public static bool sheepSwitch;
+
         public Transform Pawn
         {
             get => _pawn;
@@ -137,19 +141,22 @@ namespace sheepwalk
                 Die();
                 //Debug.Log("Hit obstacle. Should apply penalty");
             }
+
+            
         }
 
         private void Die()
         {
             deathHandler.HandlePlayerDeath();
-            
+
             //play some animation?
-            
+            normieAnim.SetTrigger("knockedOut");
             Destroy(this);
         }
 
         public void Jump(float height)
         {
+            normieAnim.SetTrigger("isJumping");
             velocity.y += -Mathf.Sign(gravity) * Mathf.Sqrt(Mathf.Abs(height * 2 * gravity));
         } 
     }

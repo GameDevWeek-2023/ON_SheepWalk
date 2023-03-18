@@ -45,7 +45,7 @@ namespace sheepwalk
             //Debug.Log(historyComponent.Distances[^3]);
             // push up to foot?
             other.transform.parent = transform;
-            
+
         }
 
         private void PushBackHerdOptDist(float amount)

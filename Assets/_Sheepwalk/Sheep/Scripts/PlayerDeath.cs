@@ -12,7 +12,7 @@ namespace sheepwalk
         public void HandlePlayerDeath()
         {
             //Endgame screen
-            if (scoreMenu != null) scoreMenu.DisplayScore();
+            if (scoreMenu != null) scoreMenu.StartCoroutine(scoreMenu.DisplayScore());
             //Respawn
             //Should probably lie on some respawn button
             //StartCoroutine(nameof(RespawnCoroutine));

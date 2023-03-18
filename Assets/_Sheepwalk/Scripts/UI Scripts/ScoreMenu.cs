@@ -26,8 +26,10 @@ public class ScoreMenu : MonoBehaviour
 
     public static bool gameOver = false;
 
-    public void DisplayScore()
+    public IEnumerator DisplayScore()
     {
+        yield return new WaitForSeconds(1);
+
         print("score");
         gameOver = true;
         scorePanel.gameObject.SetActive(true);

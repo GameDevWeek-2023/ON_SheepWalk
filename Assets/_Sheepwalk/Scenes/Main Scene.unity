@@ -216,6 +216,11 @@ MonoBehaviour:
   prefabs:
   - {fileID: 584992864014650127, guid: c84e17271eecbd042aa9b6f12f7fb8bb, type: 3}
   closenessThreshold: 0.2
+--- !u!95 &127916781 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3316528350434563706, guid: 643a6846ebfae4c4887a63fb11aa0a3c, type: 3}
+  m_PrefabInstance: {fileID: 6187305663891359317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &146750326
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +861,7 @@ MonoBehaviour:
   dashCD: 1
   dashSpeedFactor: 4
   velocity: {x: 0, y: 0, z: 0}
+  normieAnim: {fileID: 127916781}
 --- !u!143 &665620985
 CharacterController:
   m_ObjectHideFlags: 0
