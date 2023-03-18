@@ -44,6 +44,7 @@ namespace sheepwalk
             //Debug.Log(historyComponent.Distances[^2]);
             //Debug.Log(historyComponent.Distances[^3]);
             // push up to foot?
+            other.transform.localScale = Vector3.one;
             other.transform.parent = transform;
 
         }

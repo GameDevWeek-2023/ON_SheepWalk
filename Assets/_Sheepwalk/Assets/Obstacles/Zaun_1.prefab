@@ -425,6 +425,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8393429495931319227}
   - component: {fileID: -4308202502555595382}
+  - component: {fileID: -3467868109544574734}
+  - component: {fileID: 6336063590731418628}
   m_Layer: 7
   m_Name: Zaun_1
   m_TagString: Untagged
@@ -460,8 +462,33 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9165004481873963265}
   m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.63396174, z: 0.9993133}
+  m_Center: {x: 0, y: 0.10698089, z: -0.00034335256}
+--- !u!114 &-3467868109544574734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9165004481873963265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8479fb30d0c78fa45858074ffdc05f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &6336063590731418628
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9165004481873963265}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.42, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.2737178, z: 1}
+  m_Center: {x: 0, y: -0.046129927, z: 2.1145659e-16}
