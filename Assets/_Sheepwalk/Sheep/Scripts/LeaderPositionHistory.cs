@@ -43,7 +43,10 @@ namespace sheepwalk
             Distances.Add(0f);
             if (PositionHistory.Count > 1)
             {
+                // x or magnitude?
                 var currentStepLength = (PositionHistory[^1] - PositionHistory[^2]).magnitude;
+                //var currentStepLength = Mathf.Abs((PositionHistory[^1] - PositionHistory[^2]).x);
+                
                 //Debug.Log(currentStepLength);
                 for (int i = 0; i < Distances.Count-1; i++)
                 {

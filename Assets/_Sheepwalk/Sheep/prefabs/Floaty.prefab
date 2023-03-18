@@ -124,6 +124,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floaty
       objectReference: {fileID: 0}
+    - target: {fileID: 1151435072283922068, guid: f12ffe9a9fe6fe24284237d8b6620429, type: 3}
+      propertyPath: tags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151435072283922068, guid: f12ffe9a9fe6fe24284237d8b6620429, type: 3}
+      propertyPath: tags.Array.data[2]
+      value: canBounce
+      objectReference: {fileID: 0}
     - target: {fileID: 3625303903192579911, guid: f12ffe9a9fe6fe24284237d8b6620429, type: 3}
       propertyPath: m_IsActive
       value: 0
