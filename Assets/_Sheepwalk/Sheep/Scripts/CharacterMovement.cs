@@ -185,8 +185,6 @@ namespace sheepwalk
                 Die();
                 //Debug.Log("Hit obstacle. Should apply penalty");
             }
-
-            
         }
 
         private void Die()
