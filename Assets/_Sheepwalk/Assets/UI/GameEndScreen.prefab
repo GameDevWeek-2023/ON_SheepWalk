@@ -737,7 +737,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sheep Found:'
+  m_text: 'Sheep found:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db1031fd032454642af02c1dece91453, type: 2}
   m_sharedMaterial: {fileID: 1177776613472429507, guid: db1031fd032454642af02c1dece91453, type: 2}
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Zees Collected:'
+  m_text: 'Zees collected:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db1031fd032454642af02c1dece91453, type: 2}
   m_sharedMaterial: {fileID: 1177776613472429507, guid: db1031fd032454642af02c1dece91453, type: 2}

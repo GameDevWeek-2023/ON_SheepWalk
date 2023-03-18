@@ -474,7 +474,6 @@ MonoBehaviour:
   dashCD: 1
   dashSpeedFactor: 3
   velocity: {x: 0, y: 0, z: 0}
-  normieAnim: {fileID: 349911264}
 --- !u!143 &338834883
 CharacterController:
   m_ObjectHideFlags: 0
@@ -512,11 +511,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &349911264 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3316528350434563706, guid: 643a6846ebfae4c4887a63fb11aa0a3c, type: 3}
-  m_PrefabInstance: {fileID: 31174644}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &365134639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1775,18 +1769,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 828194367}
-    - target: {fileID: 2093793796249888240, guid: f4ad907109ab4c247ac4e10793a6610c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2093793796508925513, guid: f4ad907109ab4c247ac4e10793a6610c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2093793797166351923, guid: f4ad907109ab4c247ac4e10793a6610c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4ad907109ab4c247ac4e10793a6610c, type: 3}
 --- !u!1001 &2147855224665851698
@@ -1853,18 +1835,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 83207888}
     m_Modifications:
-    - target: {fileID: 3303574344689003476, guid: 994496f042b7fb84fa9665cf8456b704, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -61.799988
-      objectReference: {fileID: 0}
-    - target: {fileID: 3303574345826865102, guid: 994496f042b7fb84fa9665cf8456b704, type: 3}
-      propertyPath: m_fontSize
-      value: 43.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 3303574345826865102, guid: 994496f042b7fb84fa9665cf8456b704, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 43.46
-      objectReference: {fileID: 0}
     - target: {fileID: 3303574345869899024, guid: 994496f042b7fb84fa9665cf8456b704, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2066,14 +2036,6 @@ PrefabInstance:
     - target: {fileID: 4470154073027006359, guid: e3893cd5ee8c6c642981144fc5056977, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470154073706460997, guid: e3893cd5ee8c6c642981144fc5056977, type: 3}
-      propertyPath: m_text
-      value: 'Sheep found:'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470154074473471311, guid: e3893cd5ee8c6c642981144fc5056977, type: 3}
-      propertyPath: m_text
-      value: 'Zees collected:'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3893cd5ee8c6c642981144fc5056977, type: 3}
