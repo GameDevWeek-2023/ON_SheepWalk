@@ -1773,7 +1773,7 @@ MonoBehaviour:
   sounds:
   - name: Bounce
     clip: {fileID: 8300000, guid: 2c1524525b83bb047996818dac59e0da, type: 3}
-    volume: 0.5
+    volume: 0.394
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -1782,9 +1782,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Dash
     clip: {fileID: 8300000, guid: 5b841381b87b656478f1bf529622632c, type: 3}
-    volume: 0.5
+    volume: 0.115
     volumeVariance: 0
-    pitch: 1
+    pitch: 1.37
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 1338493255335263272, guid: f10c8a21631475e45b192168cada8a2d, type: 2}
@@ -1800,7 +1800,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Zaun_Dash
     clip: {fileID: 8300000, guid: 17e63d7749af3ae479f7ee825a0a2a95, type: 3}
-    volume: 0.5
+    volume: 0.273
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -1809,7 +1809,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Heu_Dash
     clip: {fileID: 8300000, guid: 41f009c4dd14f5946bb022d31684ded8, type: 3}
-    volume: 0.5
+    volume: 0.379
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -1818,7 +1818,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Hit
     clip: {fileID: 8300000, guid: 5141cd83508d30f46afbcbf0e6cb9f6f, type: 3}
-    volume: 0.12
+    volume: 0.033
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -1827,10 +1827,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Snozzies_2
     clip: {fileID: 8300000, guid: 598f3ac51e8924b4d8bc7baa1cc81f2e, type: 3}
-    volume: 0.5
+    volume: 0.614
     volumeVariance: 0
     pitch: 1
-    pitchVariance: 0.426
+    pitchVariance: 0.502
     loop: 0
     mixerGroup: {fileID: 1338493255335263272, guid: f10c8a21631475e45b192168cada8a2d, type: 2}
     source: {fileID: 0}
@@ -1845,7 +1845,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Rammy
     clip: {fileID: 8300000, guid: 7866bc9c9acd966428217f50b3083d02, type: 3}
-    volume: 0.5
+    volume: 0.879
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -1854,16 +1854,16 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jump_2
     clip: {fileID: 8300000, guid: f28ea2179f97731469cb29c92b823610, type: 3}
-    volume: 0.5
+    volume: 0.379
     volumeVariance: 0
     pitch: 1
-    pitchVariance: 0.386
+    pitchVariance: 0.469
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Floaty_Intro
     clip: {fileID: 8300000, guid: e15b44bc66917604f8e26a66659db670, type: 3}
-    volume: 0.5
+    volume: 0.576
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -1875,7 +1875,7 @@ MonoBehaviour:
     volume: 0.5
     volumeVariance: 0
     pitch: 1
-    pitchVariance: 0
+    pitchVariance: 0.363
     loop: 0
     mixerGroup: {fileID: 1338493255335263272, guid: f10c8a21631475e45b192168cada8a2d, type: 2}
     source: {fileID: 0}
