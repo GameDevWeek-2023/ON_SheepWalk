@@ -45,7 +45,7 @@ public class ScoreMenu : MonoBehaviour
         sheepNum.text = "" + ScoreCounter.sheepCount + " x " + sheepMult;
         sheepFinal.text = "= " + sheepTotal;
 
-        totalScore = snoozeTotal + ScoreCounter.distanceCount; /*+sheepTotal*/
+        totalScore = snoozeTotal + ScoreCounter.distanceCount + sheepTotal;
         finalScore.text = "" + totalScore;
 
         //Reset Scores
